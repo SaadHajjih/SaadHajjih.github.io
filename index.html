@@ -56,6 +56,15 @@
         }
         .hover-active #cursor-ring { width: 50px; height: 50px; background-color: rgba(16, 185, 129, 0.1); border-color: transparent; }
 
+        /* Outline Text Effect */
+        .text-outline {
+            -webkit-text-stroke: 1px #94a3b8;
+            color: transparent;
+        }
+        .dark .text-outline {
+            -webkit-text-stroke: 1px #334155;
+        }
+
         /* Modal Transitions */
         #project-modal { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         #project-modal.active { opacity: 1; pointer-events: auto; }
@@ -71,7 +80,7 @@
 
     <!-- 1. NAVIGATION BAR -->
     <nav class="fixed w-full z-40 top-0 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
@@ -105,32 +114,135 @@
         </div>
     </nav>
 
-    <!-- 2. HERO SECTION -->
-    <section id="hero" class="min-h-screen flex items-center pt-20 pb-12 max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="fade-in-up w-full">
-            <p class="text-brand-600 dark:text-brand-400 font-mono mb-4 text-sm md:text-base tracking-wide">Hi, my name is</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
-                Sa'ed Hajjih.
-            </h1>
-            <h2 class="text-4xl md:text-6xl font-bold text-slate-600 dark:text-slate-400 mb-8">
-                I build robust power systems.
-            </h2>
-            <p class="max-w-2xl text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
-                I am a 25-year-old Electrical Design Engineer based in Amman, Jordan. I specialize in designing and coordinating comprehensive low-voltage distribution, ELV networks, and hybrid microgrids for commercial and critical healthcare facilities.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#projects" class="px-7 py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-md shadow-lg shadow-brand-500/30 transition-all hover-trigger">
-                    Check out my work
-                </a>
-                <a href="#cv-contact" class="px-7 py-3.5 border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 font-semibold rounded-md transition-all hover-trigger">
-                    Get in touch
-                </a>
+    <!-- 2. HERO SECTION (SYSTEM STATUS STYLE) -->
+    <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full fade-in-up">
+            
+            <!-- Left Side: Typography & Info -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                
+                <!-- Huge Outlined & Solid Typography -->
+                <div class="relative mb-6 select-none cursor-default hover-trigger">
+                    <div class="text-[5rem] md:text-[7rem] leading-[0.8] font-black text-outline uppercase tracking-tighter">
+                        Sa'ed
+                    </div>
+                    <h1 class="text-[5rem] md:text-[7.5rem] leading-[0.8] font-black text-slate-900 dark:text-white uppercase tracking-tighter -mt-2">
+                        Hajjih<span class="text-brand-500">.</span>
+                    </h1>
+                </div>
+                
+                <!-- Subtitles -->
+                <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mb-6 tracking-wide">
+                    <strong class="text-slate-900 dark:text-slate-200">Electrical Design Engineer</strong> <span class="text-brand-500 mx-1.5 md:mx-3">·</span> BIM Coordinator <span class="text-brand-500 mx-1.5 md:mx-3">·</span> Power Systems
+                </p>
+                
+                <!-- Bio -->
+                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                    Building <strong class="text-slate-900 dark:text-white">robust power systems</strong> — from heavy LV distribution networks to intelligent hybrid microgrids. Grounded in <strong class="text-slate-900 dark:text-white">electrical engineering</strong> and large-scale MEP coordination. Bridging structural drafting precision with advanced simulation to ship infrastructure that works in production.
+                </p>
+                
+                <!-- Buttons -->
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#projects" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:bg-brand-600 transition-colors hover-trigger">
+                        VIEW WORK &darr;
+                    </a>
+                    <a href="#cv-contact" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger">
+                        GET IN TOUCH
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-8 font-mono text-xs text-slate-500 dark:text-slate-400">
+                    <a href="#" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-github text-lg"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-linkedin text-lg"></i> LinkedIn</a>
+                    <a href="mailto:S.M.Hajeh@gmail.com" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fas fa-envelope text-lg"></i> Email</a>
+                </div>
             </div>
+
+            <!-- Right Side: System Status Card -->
+            <div class="lg:col-span-5 relative group hover-trigger mt-10 lg:mt-0">
+                <!-- Glowing effect behind card -->
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-500 to-emerald-800 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                
+                <div class="relative bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
+                    <!-- Card Header -->
+                    <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+                        <span class="font-mono text-xs text-brand-500 tracking-widest uppercase">System Status</span>
+                        <div class="flex gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card Body / Stats -->
+                    <div class="space-y-6 font-mono text-xs md:text-sm">
+                        
+                        <!-- Status row -->
+                        <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                            <span>Status</span>
+                            <span class="text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Employed @ CHUM
+                            </span>
+                        </div>
+
+                        <!-- Progress Bar 1 -->
+                        <div>
+                            <div class="flex justify-between text-slate-600 dark:text-slate-400 mb-2">
+                                <span>Electrical Eng.</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">94%</span>
+                            </div>
+                            <div class="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-500 w-[94%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar 2 -->
+                        <div>
+                            <div class="flex justify-between text-slate-600 dark:text-slate-400 mb-2">
+                                <span>BIM / Revit 2025</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">88%</span>
+                            </div>
+                            <div class="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-500 w-[88%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar 3 -->
+                        <div>
+                            <div class="flex justify-between text-slate-600 dark:text-slate-400 mb-2">
+                                <span>Microgrid Sim. (ETAP/PVsyst)</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">82%</span>
+                            </div>
+                            <div class="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-500 w-[82%]"></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-4">
+                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                                <span>Location</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">Amman, Jordan</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                                <span>Specialization</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">Solar & Hybrid Microgrids</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                                <span>Age</span>
+                                <span class="text-slate-900 dark:text-slate-200 font-bold">25</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
     <!-- 3. ABOUT SECTION -->
-    <section id="about" class="py-24 max-w-6xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="flex items-center gap-4 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
@@ -160,7 +272,7 @@
     </section>
 
     <!-- 4. SKILLS & TECH STACK -->
-    <section id="skills" class="py-24 max-w-6xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="flex items-center gap-4 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Technical Arsenal</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
@@ -168,7 +280,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- BIM & CAD -->
-            <div class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
+            <div class="bg-white dark:bg-[#0f172a]/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
                 <i class="fas fa-layer-group text-3xl text-brand-500 mb-6"></i>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Drafting & Coordination</h3>
                 <ul class="space-y-3 font-medium">
@@ -178,7 +290,7 @@
                 </ul>
             </div>
             <!-- Power & Renewables -->
-            <div class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
+            <div class="bg-white dark:bg-[#0f172a]/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
                 <i class="fas fa-bolt text-3xl text-brand-500 mb-6"></i>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Analysis & Simulation</h3>
                 <ul class="space-y-3 font-medium">
@@ -189,7 +301,7 @@
                 </ul>
             </div>
             <!-- Management -->
-            <div class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
+            <div class="bg-white dark:bg-[#0f172a]/50 p-8 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-sm hover-trigger">
                 <i class="fas fa-server text-3xl text-brand-500 mb-6"></i>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Workflow & Systems</h3>
                 <ul class="space-y-3 font-medium">
@@ -202,7 +314,7 @@
     </section>
 
     <!-- 5. PROJECTS GRID (WITH MODAL TRIGGERS) -->
-    <section id="projects" class="py-24 max-w-6xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="flex items-center gap-4 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Some Things I've Built</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
@@ -211,7 +323,7 @@
         <div class="grid md:grid-cols-2 gap-10">
             
             <!-- Project 1 -->
-            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
                 <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
                     <img src="proj-shatrah.jpg" alt="Al-Shatrah Hospital" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-shatrah.jpg ]</span>
@@ -226,7 +338,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div onclick="openProject('media')" class="group flex flex-col bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+            <div onclick="openProject('media')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
                 <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
                     <img src="proj-media.jpg" alt="Media Center" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-media.jpg ]</span>
@@ -241,7 +353,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div onclick="openProject('villas')" class="group flex flex-col bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+            <div onclick="openProject('villas')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
                 <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
                     <img src="proj-villas.jpg" alt="Smart Villas" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-villas.jpg ]</span>
@@ -256,7 +368,7 @@
             </div>
 
             <!-- Project 4 -->
-            <div onclick="openProject('namk')" class="group flex flex-col bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+            <div onclick="openProject('namk')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
                 <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
                     <img src="proj-commercial.jpg" alt="Commercial" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-commercial.jpg ]</span>
@@ -274,7 +386,7 @@
     </section>
 
     <!-- 6. EXPERIENCE -->
-    <section id="experience" class="py-24 max-w-6xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <section id="experience" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="flex items-center gap-4 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Where I've Worked</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
@@ -298,8 +410,8 @@
         </div>
     </section>
 
-    <!-- 7. NEW CV / CONTACT SECTION (Based on your image) -->
-    <section id="cv-contact" class="py-32 max-w-6xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <!-- 7. CV / CONTACT SECTION -->
+    <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="grid lg:grid-cols-2 gap-16">
             
             <!-- Left Side: Summary & Buttons -->
@@ -309,10 +421,10 @@
                 </p>
                 
                 <div class="flex flex-wrap gap-4 mb-6">
-                    <a href="mailto:S.M.Hajeh@gmail.com?subject=Request%20CV%20-%20Sa'ed%20Hajjih" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase hover:bg-brand-600 transition-colors hover-trigger">
+                    <a href="mailto:S.M.Hajeh@gmail.com?subject=Request%20CV%20-%20Sa'ed%20Hajjih" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase hover:bg-brand-600 transition-colors hover-trigger rounded">
                         &darr; REQUEST CV VIA EMAIL
                     </a>
-                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger flex items-center gap-2">
+                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger rounded flex items-center gap-2">
                         VIEW LINKEDIN &nearr;
                     </a>
                 </div>
@@ -320,16 +432,16 @@
 
                 <div class="font-mono text-[10px] tracking-widest uppercase text-brand-500 mb-4">Highlights</div>
                 <div class="flex flex-wrap gap-3">
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400">CHUM Design Engineer</span>
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400">Navisworks Clash Resolution</span>
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400">Microgrid Simulations</span>
+                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">CHUM Design Engineer</span>
+                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">Navisworks Clash Resolution</span>
+                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">Microgrid Simulations</span>
                 </div>
             </div>
 
-            <!-- Right Side: CV Data Table (Matching the image style) -->
-            <div class="bg-white dark:bg-[#0f172a]/50 border border-slate-200 dark:border-slate-800 rounded-lg p-8 relative hover-trigger">
+            <!-- Right Side: CV Data Table -->
+            <div class="bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-lg p-8 relative shadow-lg hover-trigger">
                 <!-- Top Left Badge -->
-                <div class="absolute -top-3 left-6 bg-slate-50 dark:bg-slate-900 px-2 font-mono text-[10px] text-brand-500 tracking-widest uppercase">Curriculum Vitae</div>
+                <div class="absolute -top-3 left-6 bg-slate-50 dark:bg-[#0f172a] px-2 font-mono text-[10px] text-brand-500 tracking-widest uppercase">Curriculum Vitae</div>
                 
                 <div class="divide-y divide-slate-200 dark:divide-slate-800/60 font-mono text-sm">
                     <div class="py-4 flex justify-between items-center gap-4">
@@ -496,7 +608,7 @@
             const tagContainer = document.getElementById('modal-tags');
             tagContainer.innerHTML = '';
             data.tags.forEach(tag => {
-                tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-brand-500 uppercase tracking-widest">${tag}</span>`;
+                tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
             });
 
             // Populate Software
