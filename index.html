@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Primary Meta Tags -->
     <title>Sa'ed Hajjih | Electrical Design Engineer</title>
     <meta name="title" content="Sa'ed Hajjih | Electrical Design Engineer">
     <meta name="description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids. View portfolio and engineering stack.">
 
+    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sa-edhajjih.github.io/">
     <meta property="og:title" content="Sa'ed Hajjih | Electrical Design Engineer">
     <meta property="og:description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids.">
-    <meta property="og:image" content="https://sa-edhajjih.github.io/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://sa-edhajjih.github.io/og-image.jpg"> <!-- Replace with a real URL to a screenshot of your site -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sa-edhajjih.github.io/">
     <meta property="twitter:title" content="Sa'ed Hajjih | Electrical Design Engineer">
     <meta property="twitter:description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids.">
@@ -53,6 +58,28 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
+        /* Preloader Animations */
+        .boot-progress {
+            width: 0%;
+            animation: bootLoad 1.5s ease-in-out forwards;
+        }
+        @keyframes bootLoad {
+            0% { width: 0%; }
+            30% { width: 40%; }
+            60% { width: 75%; }
+            100% { width: 100%; }
+        }
+        .boot-text::after {
+            content: '';
+            animation: textDots 1.5s steps(4, end) forwards;
+        }
+        @keyframes textDots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
         /* Fade-in initial animation */
         .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         @keyframes fadeInUp {
@@ -115,32 +142,41 @@
         @media print {
             body { background: white !important; color: black !important; }
             .dark { background: white !important; color: black !important; }
-            /* Hide non-essential UI elements */
-            nav, #mobile-menu, #cursor-dot, #cursor-ring, button, .skill-tab-btn, footer, #back-to-top, .hover-trigger i { 
-                display: none !important; 
-            }
-            /* Reset colors and borders for ink saving */
+            nav, #mobile-menu, #cursor-dot, #cursor-ring, button, .skill-tab-btn, footer, #back-to-top, .hover-trigger i, #preloader { display: none !important; }
             * { -webkit-text-fill-color: black !important; color: black !important; text-shadow: none !important; box-shadow: none !important; }
             .text-outline { -webkit-text-stroke: 0px !important; color: black !important; }
             section { page-break-inside: avoid; border: none !important; padding: 20px 0 !important; margin: 0 !important; }
             .bg-\[\#0a0f16\], .bg-slate-900, .bg-brand-500 { background: transparent !important; }
             .border-brand-500 { border-color: black !important; }
-            /* Ensure all content is visible */
             .skill-tab-content { display: grid !important; }
             h1, h2, h3 { page-break-after: avoid; }
             a { text-decoration: underline; color: blue !important; }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-hidden">
 
+    <!-- Boot-Up Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-[#0a0f16] flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative flex flex-col items-center">
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 animate-pulse">S<span class="text-brand-500">.</span>H</h1>
+            <div class="w-48 md:w-64 h-[2px] bg-slate-800 rounded overflow-hidden">
+                <div class="h-full bg-brand-500 boot-progress shadow-[0_0_10px_#10b981]"></div>
+            </div>
+            <div class="mt-4 font-mono text-[10px] md:text-xs tracking-widest text-brand-500 uppercase boot-text opacity-80">Initializing Systems</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
     <div id="cursor-dot" class="hidden md:block"></div>
     <div id="cursor-ring" class="hidden md:block"></div>
 
+    <!-- Floating Back to Top Button -->
     <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-brand-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-brand-600 hover:scale-110 transition-all hover-trigger" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Main Navigation -->
     <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-white/80 dark:bg-[#0a0f16]/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -150,6 +186,7 @@
                     </a>
                 </div>
                 
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8 nav-links">
                         <a href="#about" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">About</a>
@@ -170,6 +207,7 @@
                     </div>
                 </div>
 
+                <!-- Mobile Menu Controls -->
                 <div class="md:hidden flex items-center gap-4 z-50">
                     <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all" aria-label="Toggle Theme">
                         <i class="fas fa-moon dark:hidden"></i>
@@ -183,6 +221,7 @@
         </div>
     </nav>
 
+    <!-- Mobile Slide-out Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-[#0a0f16]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center space-y-6 md:hidden overflow-y-auto">
         <a href="#about" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">About</a>
         <a href="#skills" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Skills</a>
@@ -195,8 +234,10 @@
         </a>
     </div>
 
+    <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full fade-in-up">
+        <!-- Initially transparent, animated via JS after preloader -->
+        <div id="hero-content" class="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full opacity-0">
             
             <div class="lg:col-span-7 flex flex-col justify-center">
                 <div class="relative mb-6 select-none cursor-default hover-trigger">
@@ -280,6 +321,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="flex items-center gap-4 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
@@ -299,6 +341,7 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="flex items-center gap-4 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Engineering Stack</h2>
@@ -453,6 +496,7 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="flex items-center gap-4 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Electrical Systems Executed</h2>
@@ -518,6 +562,7 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="flex items-center gap-4 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Where I've Engineered</h2>
@@ -541,6 +586,7 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="flex items-center gap-4 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Education</h2>
@@ -562,35 +608,7 @@
         </div>
     </section>
 
-    <section id="certifications" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Professional Certifications</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
-            <div class="relative pl-6 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Licensed Electrical Engineer</h3>
-                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Issued Aug 2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Jordan Engineers Association (نقابة المهندسين الأردنيين)</h4>
-                <p class="text-xs md:text-sm font-mono text-slate-500 dark:text-slate-500">Active Licensure Status</p>
-            </div>
-
-            <div class="relative pl-6 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Ultimate Electrical Design Course from Zero to Hero</h3>
-                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Udemy Professional Credential</h4>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-400">Comprehensive framework tracking core engineering principles, detailed sizing calculations, and panel coordination from layout development through construction documentation.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Contact & CV Section -->
     <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="grid lg:grid-cols-2 gap-16">
             
@@ -665,18 +683,22 @@
         <p>Built by Sa'ed Hajjih</p>
     </footer>
 
+    <!-- Interactive Project Modal -->
     <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm p-4 sm:p-6 md:p-12">
         <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
             
+            <!-- Close Button -->
             <button onclick="closeProject()" class="absolute top-3 right-3 md:top-4 md:right-4 z-50 w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger">
                 <i class="fas fa-times"></i>
             </button>
             
+            <!-- Image Area -->
             <div class="w-full md:w-1/2 h-48 md:h-auto bg-slate-100 dark:bg-[#0a0f16] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 overflow-hidden relative shrink-0">
                 <img id="modal-img" src="" alt="Project" class="w-full h-full object-cover opacity-80 z-10" onerror="this.style.display='none'">
                 <span class="absolute font-mono text-sm text-slate-400 dark:text-slate-600 z-0">[ Upload Image ]</span>
             </div>
             
+            <!-- Content Area -->
             <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto relative flex flex-col">
                 <div id="modal-tags" class="flex flex-wrap gap-2 mb-4 md:mb-6"></div>
                 <h2 id="modal-title" class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6">Project Title</h2>
@@ -689,6 +711,7 @@
                         <h4 class="text-[10px] font-mono text-brand-500 uppercase tracking-widest mb-4">Core Standards & Software</h4>
                         <div id="modal-software" class="flex flex-wrap gap-2"></div>
                     </div>
+                    <!-- Navigation Arrows -->
                     <div class="flex gap-2 ml-4 shrink-0">
                         <button onclick="navigateProject(-1)" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger" aria-label="Previous Project">
                             <i class="fas fa-chevron-left text-sm"></i>
@@ -703,6 +726,26 @@
     </div>
 
     <script>
+        // Force scroll-lock on initial load for preloader
+        document.body.style.overflow = 'hidden';
+
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                
+                // Allow body scrolling again
+                document.body.style.overflow = 'auto';
+
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    // Trigger hero fade in
+                    document.getElementById('hero-content').classList.add('fade-in-up');
+                }, 700); 
+            }, 1500); // 1.5s Boot-up sequence length
+        });
+
         // Start in dark mode by default
         document.documentElement.classList.add('dark');
 
@@ -720,7 +763,7 @@
             }
         });
 
-        /* INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS (Performance Optimized) */
+        /* INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS */
         const revealOptions = {
             root: null,
             rootMargin: '0px',
@@ -731,7 +774,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing once it's revealed
+                    observer.unobserve(entry.target);
                 }
             });
         }, revealOptions);
@@ -749,7 +792,6 @@
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                // If scroll is past the top 1/3rd of the section
                 if (scrollY >= (sectionTop - sectionHeight / 3)) {
                     current = section.getAttribute("id");
                 }
@@ -857,7 +899,6 @@
             const id = projectKeys[currentProjectIndex];
             const data = projectData[id];
             
-            // Fade out slightly for a smooth transition effect between projects
             const contentArea = document.getElementById('modal-desc').parentElement;
             contentArea.style.opacity = '0.5';
             
@@ -895,7 +936,6 @@
 
         function navigateProject(direction) {
             currentProjectIndex += direction;
-            // Wrap around logic
             if (currentProjectIndex < 0) currentProjectIndex = projectKeys.length - 1;
             if (currentProjectIndex >= projectKeys.length) currentProjectIndex = 0;
             renderModalContent();
@@ -906,12 +946,10 @@
             document.body.style.overflow = 'auto'; 
         }
 
-        // Close modal if clicking outside the content area
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeProject();
         });
         
-        // Add keyboard navigation for the modal (Escape to close, Arrows to navigate)
         document.addEventListener('keydown', (e) => {
             if (!modal.classList.contains('active')) return;
             if (e.key === 'Escape') closeProject();
