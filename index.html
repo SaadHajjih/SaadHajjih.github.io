@@ -26,9 +26,9 @@
         /* Custom scrollbar for a premium feel */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark ::-webkit-scrollbar-track { background: #0f172a; }
+        .dark ::-webkit-scrollbar-track { background: #0a0f16; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+        .dark ::-webkit-scrollbar-thumb { background: #1e293b; }
         ::-webkit-scrollbar-thumb:hover { background: #10b981; }
         
         /* Fade-in animation classes */
@@ -72,14 +72,14 @@
         #project-modal.active .modal-content { transform: translateY(0); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- Custom Mouse Effect -->
     <div id="cursor-dot" class="hidden md:block"></div>
     <div id="cursor-ring" class="hidden md:block"></div>
 
     <!-- 1. NAVIGATION BAR -->
-    <nav class="fixed w-full z-40 top-0 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <nav class="fixed w-full z-40 top-0 backdrop-blur-md bg-white/80 dark:bg-[#0a0f16]/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
@@ -158,7 +158,7 @@
             <div class="lg:col-span-5 relative group hover-trigger mt-10 lg:mt-0">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-500 to-emerald-800 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
                 
-                <div class="relative bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
+                <div class="relative bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
                     <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
                         <span class="font-mono text-xs text-brand-500 tracking-widest uppercase">System Status</span>
                         <div class="flex gap-2">
@@ -233,51 +233,51 @@
         </div>
 
         <!-- The Tabs -->
-        <div class="flex flex-wrap border-l border-t border-slate-200 dark:border-slate-800 mb-0 font-mono text-[10px] md:text-xs uppercase tracking-widest">
-            <button id="btn-calcs" onclick="switchTab('calcs')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-brand-500 text-brand-500 font-bold transition-colors hover-trigger">Design & Calcs</button>
-            <button id="btn-bim" onclick="switchTab('bim')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger">BIM & Drafting</button>
-            <button id="btn-power" onclick="switchTab('power')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger">Power & Renewables</button>
-            <button id="btn-codes" onclick="switchTab('codes')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger">Codes & Standards</button>
+        <div class="flex flex-wrap border-l border-t border-slate-200 dark:border-slate-800/80 mb-0 font-mono text-[10px] md:text-xs uppercase tracking-widest bg-slate-50 dark:bg-[#0a0f16]">
+            <button id="btn-calcs" onclick="switchTab('calcs')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-brand-500 text-brand-500 font-bold transition-colors hover-trigger bg-white dark:bg-[#0f172a]">Design & Calcs</button>
+            <button id="btn-bim" onclick="switchTab('bim')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">BIM & Drafting</button>
+            <button id="btn-power" onclick="switchTab('power')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">Power & Renewables</button>
+            <button id="btn-codes" onclick="switchTab('codes')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">Codes & Standards</button>
         </div>
 
         <!-- TAB CONTENT 1: Design & Calcs -->
-        <div id="content-calcs" class="skill-tab-content grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+        <div id="content-calcs" class="skill-tab-content grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-file-excel text-2xl text-emerald-600 dark:text-emerald-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Advanced Excel</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-table text-2xl text-blue-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Panel / Load Sched.</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[100%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-plug text-2xl text-orange-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Cable Sizing</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-bolt text-2xl text-yellow-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Short Circuit Calcs</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-arrow-down text-2xl text-red-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Voltage Drop Calcs</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-lightbulb text-2xl text-yellow-300 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Dialux evo (Lighting)</h4>
@@ -285,34 +285,34 @@
                 </div>
             </div>
             <!-- Empty filler blocks to complete the grid -->
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
         </div>
 
         <!-- TAB CONTENT 2: BIM & Drafting -->
-        <div id="content-bim" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+        <div id="content-bim" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-cube text-2xl text-blue-400 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Revit 2025</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-pencil-ruler text-2xl text-red-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">AutoCAD</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-object-group text-2xl text-emerald-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Navisworks Manage</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-cloud text-2xl text-cyan-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">BIM 360 / ACC</h4>
@@ -322,29 +322,29 @@
         </div>
 
         <!-- TAB CONTENT 3: Power & Renewables -->
-        <div id="content-power" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+        <div id="content-power" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-charging-station text-2xl text-blue-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">ETAP</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-sun text-2xl text-yellow-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">PVsyst</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-leaf text-2xl text-green-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">HOMER Pro</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-project-diagram text-2xl text-purple-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">SLD Generation</h4>
@@ -354,29 +354,29 @@
         </div>
 
         <!-- TAB CONTENT 4: Codes & Standards -->
-        <div id="content-codes" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+        <div id="content-codes" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-fire-extinguisher text-2xl text-red-600 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">NFPA (NEC / Life Safety)</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-book-open text-2xl text-emerald-600 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Saudi Building Code (SBC)</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-building text-2xl text-blue-500 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">CIBSE Guidelines</h4>
                     <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0f172a]/40 hover:bg-slate-50 dark:hover:bg-[#0f172a] transition-colors hover-trigger h-40">
+            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
                 <i class="fas fa-flag text-2xl text-slate-700 dark:text-slate-300 mb-4"></i>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Jordanian Nat. Codes</h4>
@@ -396,8 +396,8 @@
         <div class="grid md:grid-cols-2 gap-10">
             
             <!-- Project 1 -->
-            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
+            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-slate-200 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
                     <img src="proj-shatrah.jpg" alt="Al-Shatrah Hospital" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-shatrah.jpg ]</span>
                 </div>
@@ -411,8 +411,8 @@
             </div>
 
             <!-- Project 2 -->
-            <div onclick="openProject('media')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
+            <div onclick="openProject('media')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-slate-200 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
                     <img src="proj-media.jpg" alt="Media Center" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-media.jpg ]</span>
                 </div>
@@ -426,8 +426,8 @@
             </div>
 
             <!-- Project 3 -->
-            <div onclick="openProject('villas')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
+            <div onclick="openProject('villas')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-slate-200 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
                     <img src="proj-villas.jpg" alt="Smart Villas" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-villas.jpg ]</span>
                 </div>
@@ -441,8 +441,8 @@
             </div>
 
             <!-- Project 4 -->
-            <div onclick="openProject('namk')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-60 bg-slate-200 dark:bg-slate-900 relative flex items-center justify-center overflow-hidden">
+            <div onclick="openProject('namk')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-slate-200 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
                     <img src="proj-commercial.jpg" alt="Commercial" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
                     <span class="font-mono text-xs text-slate-500 absolute">[ proj-commercial.jpg ]</span>
                 </div>
@@ -468,7 +468,7 @@
         <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
             <!-- CHUM Job -->
             <div class="relative pl-8 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-slate-900"></span>
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white">Electrical Design Engineer</h3>
                     <span class="font-mono text-sm text-brand-600 dark:text-brand-400">Present</span>
@@ -493,7 +493,7 @@
         <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
             <!-- Education Entry -->
             <div class="relative pl-8 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-slate-900"></span>
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white">BSc. Electrical Power Engineering</h3>
                     <span class="font-mono text-sm text-slate-500 dark:text-slate-400">Graduated</span>
@@ -506,7 +506,7 @@
         </div>
     </section>
 
-    <!-- 8. CV / CONTACT SECTION -->
+    <!-- 8. CV / CONTACT SECTION (UPDATED AESTHETIC) -->
     <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
         <div class="grid lg:grid-cols-2 gap-16">
             
@@ -534,39 +534,37 @@
                 </div>
             </div>
 
-            <!-- Right Side: CV Data Table -->
-            <div class="bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-lg p-8 relative shadow-lg hover-trigger">
+            <!-- Right Side: CV Data Table (NEW DESIGN) -->
+            <div class="bg-[#0a0f16] border border-slate-800/80 rounded-xl p-8 relative shadow-2xl hover-trigger mt-8 lg:mt-0">
                 <!-- Top Left Badge -->
-                <div class="absolute -top-3 left-6 bg-slate-50 dark:bg-[#0f172a] px-2 font-mono text-[10px] text-brand-500 tracking-widest uppercase">Curriculum Vitae</div>
+                <div class="absolute -top-3 left-6 bg-[#0a0f16] px-3 font-mono text-[11px] text-brand-500 tracking-widest uppercase">
+                    Curriculum Vitae
+                </div>
                 
-                <div class="divide-y divide-slate-200 dark:divide-slate-800/60 font-mono text-sm">
-                    <div class="py-4 flex justify-between items-center gap-4">
+                <div class="divide-y divide-slate-800/80 font-mono text-sm">
+                    <div class="py-5 flex justify-between items-center gap-4">
                         <span class="text-slate-500">Name</span>
-                        <span class="text-slate-900 dark:text-white font-bold text-right">Sa'ed Hajjih</span>
+                        <span class="text-white font-bold text-right">Sa'ed Hajjih</span>
                     </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
+                    <div class="py-5 flex justify-between items-center gap-4">
                         <span class="text-slate-500">Location</span>
-                        <span class="text-slate-900 dark:text-slate-300 text-right">Amman, Jordan</span>
+                        <span class="text-slate-300 font-medium text-right">Amman, Jordan</span>
                     </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
+                    <div class="py-5 flex justify-between items-center gap-4">
                         <span class="text-slate-500">Email</span>
-                        <span class="text-brand-500 text-right break-all">S.M.Hajeh@gmail.com</span>
+                        <span class="text-brand-500 font-bold text-right break-all">S.M.Hajeh@gmail.com</span>
                     </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
+                    <div class="py-5 flex justify-between items-center gap-4">
                         <span class="text-slate-500">Degree</span>
-                        <span class="text-slate-900 dark:text-white font-bold text-right">BSc. Electrical Power Eng.</span>
+                        <span class="text-white font-bold text-right">BSc. Electrical Power Eng.</span>
                     </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
+                    <div class="py-5 flex justify-between items-center gap-4">
                         <span class="text-slate-500">Current Role</span>
-                        <span class="text-slate-900 dark:text-slate-300 text-right">Electrical Design Engineer</span>
+                        <span class="text-slate-300 font-medium text-right">Electrical Design Engineer</span>
                     </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
+                    <div class="py-5 flex justify-between items-center gap-4 border-b-0">
                         <span class="text-slate-500">Employer</span>
-                        <span class="text-slate-900 dark:text-slate-300 text-right">CHUM</span>
-                    </div>
-                    <div class="py-4 flex justify-between items-center gap-4">
-                        <span class="text-slate-500">Key Software</span>
-                        <span class="text-slate-900 dark:text-slate-300 text-right">Revit, Navisworks, ETAP, PVsyst</span>
+                        <span class="text-slate-300 font-medium text-right">CHUM</span>
                     </div>
                 </div>
             </div>
@@ -575,7 +573,7 @@
     </section>
 
     <!-- 9. FOOTER WITH HITS -->
-    <footer class="py-12 text-center text-slate-500 dark:text-slate-400 font-mono text-sm border-t border-slate-200 dark:border-slate-800">
+    <footer class="py-12 text-center text-slate-500 dark:text-slate-400 font-mono text-sm border-t border-slate-200 dark:border-slate-800/80 bg-[#0a0f16]">
         <div class="flex justify-center gap-6 mb-6">
             <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="hover:text-brand-500 transition-colors text-xl hover-trigger"><i class="fab fa-linkedin"></i></a>
             <a href="#" class="hover:text-brand-500 transition-colors text-xl hover-trigger"><i class="fab fa-github"></i></a>
@@ -586,14 +584,14 @@
         <!-- Live View Counter Badge -->
         <div class="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity">
             <a href="https://hits.sh/sa-edhajjih.github.io/" target="_blank" class="hover-trigger">
-                <img src="https://hits.sh/sa-edhajjih.github.io.svg?style=for-the-badge&label=PORTFOLIO%20VIEWS&color=10b981&labelColor=0f172a" alt="Hits">
+                <img src="https://hits.sh/sa-edhajjih.github.io.svg?style=for-the-badge&label=PORTFOLIO%20VIEWS&color=10b981&labelColor=0a0f16" alt="Hits">
             </a>
         </div>
     </footer>
 
     <!-- FULL SCREEN PROJECT MODAL -->
     <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm">
-        <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
+        <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
             <!-- Close Button -->
             <button onclick="closeProject()" class="absolute top-4 right-4 z-50 w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger">
                 <i class="fas fa-times"></i>
@@ -638,8 +636,8 @@
             
             // Reset all buttons styling
             document.querySelectorAll('.skill-tab-btn').forEach(el => {
-                el.classList.remove('border-brand-500', 'text-brand-500', 'font-bold');
-                el.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-500');
+                el.classList.remove('border-brand-500', 'text-brand-500', 'font-bold', 'bg-white', 'dark:bg-[#0f172a]');
+                el.classList.add('border-slate-200', 'dark:border-slate-800/80', 'text-slate-500');
             });
             
             // Show selected tab content
@@ -647,8 +645,8 @@
             
             // Highlight selected button
             const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-500');
-            activeBtn.classList.add('border-brand-500', 'text-brand-500', 'font-bold');
+            activeBtn.classList.remove('border-slate-200', 'dark:border-slate-800/80', 'text-slate-500');
+            activeBtn.classList.add('border-brand-500', 'text-brand-500', 'font-bold', 'bg-white', 'dark:bg-[#0f172a]');
         }
 
         /* CUSTOM MOUSE TRACKING LOGIC */
@@ -668,7 +666,7 @@
             });
 
             // Hover effect expansion
-            const hoverElements = document.querySelectorAll('.hover-trigger, a, button');
+            const hoverElements = document.querySelectorAll('.hover-trigger, a, button, .skill-tab-btn');
             hoverElements.forEach(el => {
                 el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
                 el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
@@ -724,7 +722,7 @@
             const tagContainer = document.getElementById('modal-tags');
             tagContainer.innerHTML = '';
             data.tags.forEach(tag => {
-                tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
+                tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-[#0a0f16] border border-slate-200 dark:border-slate-800 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
             });
 
             // Populate Software
