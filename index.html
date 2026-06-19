@@ -25,10 +25,8 @@
     <style>
         /* Custom scrollbar for a premium feel */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark ::-webkit-scrollbar-track { background: #0a0f16; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #1e293b; }
+        ::-webkit-scrollbar-track { background: #0a0f16; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #10b981; }
         
         /* Fade-in animation classes */
@@ -58,11 +56,8 @@
 
         /* Outline Text Effect */
         .text-outline {
-            -webkit-text-stroke: 1px #94a3b8;
-            color: transparent;
-        }
-        .dark .text-outline {
             -webkit-text-stroke: 1px #334155;
+            color: transparent;
         }
 
         /* Modal Transitions */
@@ -72,35 +67,35 @@
         #project-modal.active .modal-content { transform: translateY(0); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-[#0a0f16] text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white dark">
 
+    <!-- Custom Mouse Effect -->
     <div id="cursor-dot" class="hidden md:block"></div>
     <div id="cursor-ring" class="hidden md:block"></div>
 
-    <nav class="fixed w-full z-40 top-0 backdrop-blur-md bg-white/80 dark:bg-[#0a0f16]/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="fixed w-full z-40 top-0 backdrop-blur-md bg-[#0a0f16]/80 border-b border-slate-800 shadow-sm transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-extrabold tracking-tighter text-slate-900 dark:text-white hover-trigger">
+                    <a href="#" class="text-2xl font-extrabold tracking-tighter text-white hover-trigger">
                         S<span class="text-brand-500">.</span>Hajjih
                     </a>
                 </div>
                 
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8">
-                        <a href="#about" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">About</a>
-                        <a href="#skills" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Skills</a>
-                        <a href="#projects" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Projects</a>
-                        <a href="#experience" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Experience</a>
-                        <a href="#education" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Education</a>
-                        <a href="#cv-contact" class="text-sm font-medium hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Contact</a>
+                        <a href="#about" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">About</a>
+                        <a href="#skills" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">Skills</a>
+                        <a href="#projects" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">Projects</a>
+                        <a href="#experience" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">Experience</a>
+                        <a href="#education" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">Education</a>
+                        <a href="#cv-contact" class="text-sm font-medium hover:text-brand-400 transition-colors hover-trigger">Contact</a>
                         
-                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all hover-trigger">
-                            <i class="fas fa-moon dark:hidden"></i>
-                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-                        
-                        <a href="mailto:S.M.Hajeh@gmail.com?subject=Request%20CV%20-%20Sa'ed%20Hajjih" class="px-5 py-2.5 text-sm font-semibold border-2 border-brand-500 text-brand-600 dark:text-brand-400 hover:bg-brand-500 hover:text-white dark:hover:text-white rounded-md transition-all hover-trigger">
+                        <!-- Resume Button (Triggers Email) -->
+                        <a href="mailto:S.M.Hajeh@gmail.com?subject=Request%20CV%20-%20Sa'ed%20Hajjih" class="px-5 py-2.5 text-sm font-semibold border-2 border-brand-500 text-brand-400 hover:bg-brand-500 hover:text-white rounded-md transition-all hover-trigger">
                             Resume
                         </a>
                     </div>
@@ -109,48 +104,51 @@
         </div>
     </nav>
 
+    <!-- 2. HERO SECTION -->
     <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full fade-in-up">
             
+            <!-- Left Side: Typography & Info -->
             <div class="lg:col-span-7 flex flex-col justify-center">
                 <div class="relative mb-6 select-none cursor-default hover-trigger">
                     <div class="text-[5rem] md:text-[7rem] leading-[0.8] font-black text-outline uppercase tracking-tighter">
                         Sa'ed
                     </div>
-                    <h1 class="text-[5rem] md:text-[7.5rem] leading-[0.8] font-black text-slate-900 dark:text-white uppercase tracking-tighter -mt-2">
+                    <h1 class="text-[5rem] md:text-[7.5rem] leading-[0.8] font-black text-white uppercase tracking-tighter -mt-2">
                         Hajjih<span class="text-brand-500">.</span>
                     </h1>
                 </div>
                 
-                <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mb-6 tracking-wide">
-                    <strong class="text-slate-900 dark:text-slate-200">Electrical Design Engineer</strong> <span class="text-brand-500 mx-1.5 md:mx-3">·</span> BIM Coordinator <span class="text-brand-500 mx-1.5 md:mx-3">·</span> Power Systems
+                <p class="font-mono text-sm text-slate-400 mb-6 tracking-wide">
+                    <strong class="text-slate-200">Electrical Design Engineer</strong> <span class="text-brand-500 mx-1.5 md:mx-3">·</span> BIM Coordinator <span class="text-brand-500 mx-1.5 md:mx-3">·</span> Power Systems
                 </p>
                 
-                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl">
-                    Engineering <strong class="text-slate-900 dark:text-white">mission-critical power systems</strong> — from heavy LV distribution networks to intelligent hybrid microgrids. Grounded in <strong class="text-slate-900 dark:text-white">strict code compliance (NFPA, CIBSE, SBC)</strong> and large-scale MEP coordination. Bridging structural drafting precision with advanced simulation to ship resilient infrastructure.
+                <p class="text-base md:text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                    Engineering <strong class="text-white">mission-critical power systems</strong> — from heavy LV distribution networks to intelligent hybrid microgrids. Grounded in <strong class="text-white">strict code compliance (NFPA, CIBSE, SBC)</strong> and large-scale MEP coordination. Bridging structural drafting precision with advanced simulation to ship resilient infrastructure.
                 </p>
                 
                 <div class="flex flex-wrap gap-4 mb-10">
                     <a href="#projects" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:bg-brand-600 transition-colors hover-trigger">
                         VIEW WORK &darr;
                     </a>
-                    <a href="#cv-contact" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger">
+                    <a href="#cv-contact" class="px-6 py-4 border border-slate-700 text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger">
                         GET IN TOUCH
                     </a>
                 </div>
 
-                <div class="flex items-center gap-8 font-mono text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-8 font-mono text-xs text-slate-400">
                     <a href="#" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-github text-lg"></i> GitHub</a>
                     <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-linkedin text-lg"></i> LinkedIn</a>
                     <a href="mailto:S.M.Hajeh@gmail.com" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fas fa-envelope text-lg"></i> Email</a>
                 </div>
             </div>
 
+            <!-- Right Side: System Status Card (Minimalist) -->
             <div class="lg:col-span-5 relative group hover-trigger mt-10 lg:mt-0">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-500 to-emerald-800 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
                 
-                <div class="relative bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
-                    <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+                <div class="relative bg-[#0d121c] border border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-6">
                         <span class="font-mono text-xs text-brand-500 tracking-widest uppercase">System Status</span>
                         <div class="flex gap-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
@@ -160,21 +158,23 @@
                     </div>
 
                     <div class="space-y-6 font-mono text-xs md:text-sm">
-                        <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                        <!-- Status row -->
+                        <div class="flex justify-between items-center text-slate-400">
                             <span>Status</span>
-                            <span class="text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                            <span class="text-slate-200 font-bold flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Employed @ CHUM
                             </span>
                         </div>
 
-                        <div class="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-4">
-                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                        <!-- Location & Specialization -->
+                        <div class="border-t border-slate-800 pt-6 space-y-4">
+                            <div class="flex justify-between items-center text-slate-400">
                                 <span>Location</span>
-                                <span class="text-slate-900 dark:text-slate-200 font-bold">Amman, Jordan</span>
+                                <span class="text-slate-200 font-bold">Amman, Jordan</span>
                             </div>
-                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                            <div class="flex justify-between items-center text-slate-400">
                                 <span>Specialization</span>
-                                <span class="text-slate-900 dark:text-slate-200 font-bold">ELV & Home Automation</span>
+                                <span class="text-slate-200 font-bold">ELV & Home Automation</span>
                             </div>
                         </div>
 
@@ -185,14 +185,15 @@
         </div>
     </section>
 
-    <section id="about" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
         <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">About Me</h2>
+            <div class="h-px bg-slate-800 flex-grow max-w-xs"></div>
         </div>
         
         <div class="grid md:grid-cols-5 gap-12">
-            <div class="md:col-span-3 space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            <div class="md:col-span-3 space-y-6 text-lg text-slate-400 leading-relaxed">
                 <p>
                     Hello! I'm Sa'ed, an Electrical Power Engineering graduate with a profound interest in bridging the gap between heavy structural power distribution and modern, smart hybrid microgrids.
                 </p>
@@ -205,7 +206,7 @@
             </div>
             
             <div class="md:col-span-2 relative group hover-trigger cursor-pointer">
-                <div class="relative w-full max-w-[300px] aspect-square mx-auto rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-brand-500 overflow-hidden flex items-center justify-center">
+                <div class="relative w-full max-w-[300px] aspect-square mx-auto rounded-lg bg-slate-800 border-2 border-brand-500 overflow-hidden flex items-center justify-center">
                     <img src="profile-pic.jpg" alt="Sa'ed Hajjih" class="w-full h-full object-cover hidden z-10" onerror="this.classList.add('hidden');">
                     <span class="text-sm font-mono text-slate-500 z-0 text-center px-4">[ Upload profile-pic.jpg ]</span>
                 </div>
@@ -213,168 +214,532 @@
         </div>
     </section>
 
-    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <!-- 4. TABBED SKILLS & TECH STACK SECTION (Sleek Dark UI) -->
+    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
         <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Engineering Stack</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Engineering Stack</h2>
+            <div class="h-px bg-slate-800 flex-grow max-w-xs"></div>
         </div>
 
-        <div class="flex flex-wrap border-l border-t border-slate-200 dark:border-slate-800/80 mb-0 font-mono text-[10px] md:text-xs uppercase tracking-widest bg-slate-50 dark:bg-[#0a0f16]">
-            <button id="btn-calcs" onclick="switchTab('calcs')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-brand-500 text-brand-500 font-bold transition-colors hover-trigger bg-white dark:bg-[#0f172a]">Design & Calcs</button>
-            <button id="btn-bim" onclick="switchTab('bim')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">BIM & Drafting</button>
-            <button id="btn-power" onclick="switchTab('power')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">Power & Renewables</button>
-            <button id="btn-codes" onclick="switchTab('codes')" class="skill-tab-btn flex-1 min-w-[150px] px-4 py-4 border-r border-b border-slate-200 dark:border-slate-800/80 text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger hover:bg-slate-100 dark:hover:bg-[#111827]">Codes & Standards</button>
+        <!-- The Tabs -->
+        <div class="flex border-b border-slate-800 font-mono text-[10px] md:text-xs tracking-widest overflow-x-auto">
+            <button id="btn-calcs" onclick="switchTab('calcs')" class="skill-tab-btn px-6 py-4 border-t-2 border-brand-500 text-brand-500 bg-[#0d121c] transition-colors hover-trigger whitespace-nowrap">Design & Calcs</button>
+            <button id="btn-bim" onclick="switchTab('bim')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">BIM & Drafting</button>
+            <button id="btn-power" onclick="switchTab('power')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">Power & Renewables</button>
+            <button id="btn-codes" onclick="switchTab('codes')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">Codes & Standards</button>
         </div>
 
-        <div id="content-calcs" class="skill-tab-content grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
-                <i class="fas fa-file-excel text-2xl text-emerald-600 dark:text-emerald-500 mb-4"></i>
+        <!-- TAB CONTENT 1: Design & Calcs -->
+        <div id="content-calcs" class="skill-tab-content grid grid-cols-2 md:grid-cols-4 border-l border-slate-800">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
+                <i class="fas fa-file-excel text-2xl text-emerald-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Advanced Excel</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Advanced Excel</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-table text-2xl text-blue-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Panel / Load Sched.</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[100%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Panel / Load Sched.</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[100%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-plug text-2xl text-orange-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Cable Sizing</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Cable Sizing</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-bolt text-2xl text-yellow-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Short Circuit Calcs</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Short Circuit Calcs</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-arrow-down text-2xl text-red-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Voltage Drop Calcs</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Voltage Drop Calcs</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-lightbulb text-2xl text-yellow-300 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Dialux evo (Lighting)</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Dialux evo (Lighting)</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0a0f16] h-40 hidden md:block"></div>
+            <!-- Fillers for clean grid -->
+            <div class="p-6 border-r border-b border-slate-800 h-44 hidden md:block"></div>
+            <div class="p-6 border-r border-b border-slate-800 h-44 hidden md:block"></div>
         </div>
 
-        <div id="content-bim" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+        <!-- TAB CONTENT 2: BIM & Drafting -->
+        <div id="content-bim" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-800">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-cube text-2xl text-blue-400 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Revit 2025</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Revit 2025</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-pencil-ruler text-2xl text-red-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">AutoCAD</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">AutoCAD</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-object-group text-2xl text-emerald-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Navisworks Manage</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Navisworks Manage</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-cloud text-2xl text-cyan-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">BIM 360 / ACC</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">BIM 360 / ACC</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
                 </div>
             </div>
         </div>
 
-        <div id="content-power" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+        <!-- TAB CONTENT 3: Power & Renewables -->
+        <div id="content-power" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-800">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-charging-station text-2xl text-blue-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">ETAP</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">ETAP</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-sun text-2xl text-yellow-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">PVsyst</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">PVsyst</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-leaf text-2xl text-green-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">HOMER Pro</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">HOMER Pro</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-project-diagram text-2xl text-purple-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">SLD Generation</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">SLD Generation</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
         </div>
 
-        <div id="content-codes" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#0f172a]">
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+        <!-- TAB CONTENT 4: Codes & Standards -->
+        <div id="content-codes" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-800">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-fire-extinguisher text-2xl text-red-600 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">NFPA (NEC / Life Safety)</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">NFPA (Life Safety)</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-book-open text-2xl text-emerald-600 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Saudi Building Code (SBC)</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Saudi Building Code</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
                 <i class="fas fa-building text-2xl text-blue-500 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">CIBSE Guidelines</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">CIBSE Guidelines</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
                 </div>
             </div>
-            <div class="p-6 border-b border-r border-slate-200 dark:border-slate-800/80 flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-[#111827] transition-colors hover-trigger h-40">
-                <i class="fas fa-flag text-2xl text-slate-700 dark:text-slate-300 mb-4"></i>
+            <div class="p-6 border-r border-b border-slate-800 flex flex-col justify-between hover:bg-[#0d121c] transition-colors hover-trigger h-44 group">
+                <i class="fas fa-flag text-2xl text-slate-300 mb-4"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight">Jordanian Nat. Codes</h4>
-                    <div class="w-full h-0.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                    <h4 class="font-bold text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-400 transition-colors">Jordanian Nat. Codes</h4>
+                    <div class="w-full h-[2px] bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50">
+    <!-- 5. PROJECTS GRID -->
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
         <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Electrical Systems Executed</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow max-w-xs"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Electrical Systems Executed</h2>
+            <div class="h-px bg-slate-800 flex-grow max-w-xs"></div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-10">
             
-            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-[#0f172a]/40 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-60 bg-slate-200 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
-                    <img src="proj-shatrah.jpg" alt="Al-Shatrah Hospital" class="w-full h-full object-cover opacity-80 group-hover:opacity-
+            <!-- Project 1 -->
+            <div onclick="openProject('shatrah')" class="group flex flex-col bg-[#0d121c]/40 rounded-xl border border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
+                    <img src="proj-shatrah.jpg" alt="Al-Shatrah Hospital" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+                    <span class="font-mono text-xs text-slate-600 absolute">[ proj-shatrah.jpg ]</span>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="font-mono text-brand-500 text-sm mb-2">Healthcare Infrastructure</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Al-Shatrah Hospital (Iraq)</h3>
+                    <p class="text-slate-400 mb-6 flex-grow line-clamp-2">
+                        Managed complex low-voltage distribution and heavy structural containment layouts. Coordinated indoor cable trays to eliminate spatial clashes utilizing Navisworks. Engineered strictly to hospital safety codes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div onclick="openProject('media')" class="group flex flex-col bg-[#0d121c]/40 rounded-xl border border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
+                    <img src="proj-media.jpg" alt="Media Center" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+                    <span class="font-mono text-xs text-slate-600 absolute">[ proj-media.jpg ]</span>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="font-mono text-brand-500 text-sm mb-2">Low Current / ELV Networks</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Multimedia Production Center</h3>
+                    <p class="text-slate-400 mb-6 flex-grow line-clamp-2">
+                        Developed detailed Extra-Low Voltage (ELV) system layouts for a high-density media complex. Engineered complex vertical ELV riser diagrams and heavily optimized MDF/IDF telecommunications layouts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div onclick="openProject('villas')" class="group flex flex-col bg-[#0d121c]/40 rounded-xl border border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
+                    <img src="proj-villas.jpg" alt="Smart Villas" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+                    <span class="font-mono text-xs text-slate-600 absolute">[ proj-villas.jpg ]</span>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="font-mono text-brand-500 text-sm mb-2">Smart Automation & Microgrids</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Luxury Smart Villas</h3>
+                    <p class="text-slate-400 mb-6 flex-grow line-clamp-2">
+                        Engineered comprehensive electrical network infrastructure, mapping out IP-CCTV zones and elevator access control loops. Modeled grid-tied solar arrays utilizing PVsyst and HOMER Pro.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div onclick="openProject('namk')" class="group flex flex-col bg-[#0d121c]/40 rounded-xl border border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
+                <div class="h-60 bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
+                    <img src="proj-commercial.jpg" alt="Commercial" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+                    <span class="font-mono text-xs text-slate-600 absolute">[ proj-commercial.jpg ]</span>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="font-mono text-brand-500 text-sm mb-2">Commercial & Educational Power</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">NAMK Bank & Al Ahliyyah</h3>
+                    <p class="text-slate-400 mb-6 flex-grow line-clamp-2">
+                        Designed complete power mechanical system layouts for NAMK Bank. Authored an executive engineering assessment and system upgrade strategy for Al Ahliyyah School infrastructure.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. EXPERIENCE -->
+    <section id="experience" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Where I've Engineered</h2>
+            <div class="h-px bg-slate-800 flex-grow max-w-xs"></div>
+        </div>
+
+        <div class="relative border-l border-slate-700 ml-3 md:ml-4 space-y-16">
+            <!-- CHUM Job -->
+            <div class="relative pl-8 md:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-[#0a0f16]"></span>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                    <h3 class="text-xl font-bold text-white">Electrical Design Engineer</h3>
+                    <span class="font-mono text-sm text-brand-400">Present</span>
+                </div>
+                <h4 class="text-lg font-medium text-slate-400 mb-6">Consultancies House for Ultimate Management (CHUM)</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-1">▹</span> Lead power mechanical and low-current infrastructure design for large-scale international projects, strictly adhering to NFPA and regional codes (SBC).</li>
+                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-1">▹</span> Utilize Navisworks and Revit 2025 to execute master structural clash resolution and produce flawless coordination CAD drawings.</li>
+                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-1">▹</span> Manage and troubleshoot local engineering file servers leveraging Tailscale remote access for seamless team collaboration.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EDUCATION -->
+    <section id="education" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Education</h2>
+            <div class="h-px bg-slate-800 flex-grow max-w-xs"></div>
+        </div>
+
+        <div class="relative border-l border-slate-700 ml-3 md:ml-4 space-y-16">
+            <!-- Education Entry -->
+            <div class="relative pl-8 md:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-600 ring-4 ring-[#0a0f16]"></span>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                    <h3 class="text-xl font-bold text-white">BSc. Electrical Power Engineering</h3>
+                    <span class="font-mono text-sm text-slate-400">Graduated</span>
+                </div>
+                <h4 class="text-lg font-medium text-slate-400 mb-6">Al-Balqa Applied University</h4>
+                <p class="text-slate-400">
+                    Focused heavily on renewable energy integration and heavy power load management. Developed expertise in optimizing grid-tied commercial solar arrays paired with battery storage systems utilizing ETAP, HOMER Pro, and PVsyst for precision load calculations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CV / CONTACT SECTION (PERFECTED DESIGN) -->
+    <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-800/50">
+        <div class="grid lg:grid-cols-2 gap-16">
+            
+            <!-- Left Side: Summary & Buttons -->
+            <div class="flex flex-col justify-center">
+                <p class="text-xl text-slate-300 leading-relaxed mb-10">
+                    A highly technical profile combining <strong class="text-white">electrical engineering, BIM coordination</strong>, and <strong class="text-white">power system simulations</strong>. Proven track record delivering large-scale infrastructure projects in the Middle East with a strict focus on precision, spatial clash resolution, and safety compliance (NFPA, CIBSE, SBC).
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <a href="mailto:S.M.Hajeh@gmail.com?subject=Request%20CV%20-%20Sa'ed%20Hajjih" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase hover:bg-brand-600 transition-colors hover-trigger rounded">
+                        &darr; REQUEST CV VIA EMAIL
+                    </a>
+                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="px-6 py-4 border border-slate-700 text-white font-bold font-mono text-xs tracking-widest uppercase hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger rounded flex items-center gap-2">
+                        VIEW LINKEDIN &nearr;
+                    </a>
+                </div>
+                <p class="font-mono text-xs text-slate-500 mb-12">Click "Request CV via Email" — a pre-filled email will open instantly.</p>
+
+                <div class="font-mono text-[10px] tracking-widest uppercase text-brand-500 mb-4">Core Strengths</div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-3 py-1.5 border border-slate-800 text-xs font-mono text-slate-400 rounded">NFPA & SBC Compliant</span>
+                    <span class="px-3 py-1.5 border border-slate-800 text-xs font-mono text-slate-400 rounded">Navisworks Clash Resolution</span>
+                    <span class="px-3 py-1.5 border border-slate-800 text-xs font-mono text-slate-400 rounded">Microgrid Simulations</span>
+                </div>
+            </div>
+
+            <!-- Right Side: CV Data Table (1:1 with reference) -->
+            <div class="border border-slate-800 rounded-lg p-8 relative hover-trigger mt-8 lg:mt-0 bg-transparent">
+                <!-- Top Left Badge positioned exactly on the border line -->
+                <div class="absolute -top-[10px] left-6 bg-[#0a0f16] px-3 font-mono text-[11px] text-brand-500 tracking-widest uppercase leading-none">
+                    Curriculum Vitae
+                </div>
+                
+                <!-- Table Rows -->
+                <div class="flex flex-col font-mono text-sm">
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">Name</span>
+                        <span class="text-white font-bold text-right">Sa'ed Hajjih</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">Location</span>
+                        <span class="text-slate-300 font-medium text-right">Amman, Jordan</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">Email</span>
+                        <span class="text-brand-500 font-bold text-right break-all">S.M.Hajeh@gmail.com</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">Degree</span>
+                        <span class="text-white font-bold text-right">BSc. Electrical Power Eng.</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">University</span>
+                        <span class="text-slate-300 font-medium text-right">Al-Balqa Applied University</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-800">
+                        <span class="text-slate-500">Current Role</span>
+                        <span class="text-slate-300 font-medium text-right">Electrical Design Engineer</span>
+                    </div>
+                    <div class="py-5 flex justify-between items-center gap-4">
+                        <span class="text-slate-500">Employer</span>
+                        <span class="text-slate-300 font-medium text-right">CHUM</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. FOOTER WITH HITS -->
+    <footer class="py-12 text-center text-slate-400 font-mono text-sm border-t border-slate-800 bg-[#0a0f16]">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="hover:text-brand-500 transition-colors text-xl hover-trigger"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-brand-500 transition-colors text-xl hover-trigger"><i class="fab fa-github"></i></a>
+            <a href="mailto:S.M.Hajeh@gmail.com" class="hover:text-brand-500 transition-colors text-xl hover-trigger"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="mb-6">Built by Sa'ed Hajjih</p>
+        
+        <!-- Live View Counter Badge -->
+        <div class="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity">
+            <a href="https://hits.sh/sa-edhajjih.github.io/" target="_blank" class="hover-trigger">
+                <img src="https://hits.sh/sa-edhajjih.github.io.svg?style=for-the-badge&label=PORTFOLIO%20VIEWS&color=10b981&labelColor=0a0f16" alt="Hits">
+            </a>
+        </div>
+    </footer>
+
+    <!-- FULL SCREEN PROJECT MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm">
+        <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-[#0f172a] border border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closeProject()" class="absolute top-4 right-4 z-50 w-10 h-10 bg-slate-800 border border-slate-700 text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Image Area -->
+            <div class="w-full md:w-1/2 h-64 md:h-auto bg-[#0a0f16] flex items-center justify-center border-r border-slate-800 overflow-hidden relative">
+                <img id="modal-img" src="" alt="Project" class="w-full h-full object-cover opacity-80 z-10" onerror="this.style.display='none'">
+                <span class="absolute font-mono text-sm text-slate-600 z-0">[ Upload Image ]</span>
+            </div>
+            
+            <!-- Text Area -->
+            <div class="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+                <div id="modal-tags" class="flex flex-wrap gap-2 mb-6"></div>
+                <h2 id="modal-title" class="text-3xl md:text-5xl font-extrabold text-white mb-6">Project Title</h2>
+                <div class="w-12 h-1 bg-brand-500 mb-6"></div>
+                <div id="modal-desc" class="text-slate-400 space-y-4 leading-relaxed text-sm md:text-base">
+                    <!-- Description injected via JS -->
+                </div>
+                
+                <div class="mt-10 pt-8 border-t border-slate-800">
+                    <h4 class="text-[10px] font-mono text-brand-500 uppercase tracking-widest mb-4">Core Standards & Software</h4>
+                    <div id="modal-software" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // Set default to Dark Mode for the engineering aesthetic
+        document.documentElement.classList.add('dark');
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        /* TAB LOGIC FOR SKILLS SECTION */
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.skill-tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Reset all buttons styling
+            document.querySelectorAll('.skill-tab-btn').forEach(el => {
+                el.classList.remove('border-brand-500', 'text-brand-500', 'bg-[#0d121c]');
+                el.classList.add('border-transparent', 'text-slate-500');
+            });
+            
+            // Show selected tab content
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500');
+            activeBtn.classList.add('border-brand-500', 'text-brand-500', 'bg-[#0d121c]');
+        }
+
+        /* CUSTOM MOUSE TRACKING LOGIC */
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        
+        // Only run mouse tracking if the device has a fine pointer (not a touch screen)
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+                
+                setTimeout(() => {
+                    ring.style.left = e.clientX + 'px';
+                    ring.style.top = e.clientY + 'px';
+                }, 50);
+            });
+
+            // Hover effect expansion
+            const hoverElements = document.querySelectorAll('.hover-trigger, a, button, .skill-tab-btn');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+            });
+        }
+
+        /* PROJECT MODAL DATA & LOGIC */
+        const projectData = {
+            shatrah: {
+                title: "Al-Shatrah Hospital (Iraq)",
+                tags: ["LV Distribution", "Clash Detection", "Medical Standard"],
+                desc: "<p>Executed the master electrical design and heavy structural drawing coordination for a major healthcare facility.</p><p>The primary challenge was navigating stringent medical compliance standards while organizing complex low-voltage distribution paths. Utilized <strong>Navisworks</strong> extensively to resolve dense spatial MEP clashes between electrical containment networks and mechanical HVAC lines in tightly congested ceiling spaces.</p>",
+                software: ["NFPA Compliant", "Revit 2025", "Navisworks", "AutoCAD"],
+                img: "proj-shatrah.jpg"
+            },
+            media: {
+                title: "Multimedia Production Center",
+                tags: ["ELV Riser Layouts", "MDF/IDF Sizing", "Data Routing"],
+                desc: "<p>Developed detailed Extra-Low Voltage (ELV) system layout designs for a high-density modern media complex.</p><p>Engineered complex vertical ELV riser diagrams and optimized MDF/IDF telecommunications cabinet layouts. Focused heavily on ensuring efficient data routing, signal integrity over long distances, and adhering to strict server rack spacing and cooling clearances.</p>",
+                software: ["CIBSE Guidelines", "AutoCAD", "Revit"],
+                img: "proj-media.jpg"
+            },
+            villas: {
+                title: "Luxury Smart Villas",
+                tags: ["Home Automation", "CCTV Zones", "Grid-Tied Solar"],
+                desc: "<p>Engineered comprehensive network infrastructure for high-end residential luxury homes.</p><p>The scope included mapping out full IP-CCTV surveillance coverage zones, integrated home automation linkage, and logical elevator access control loops. Additionally, conducted advanced microgrid feasibility studies, modeling grid-tied solar arrays using PVsyst and HOMER Pro to calculate yield and load offset.</p>",
+                software: ["PVsyst", "HOMER Pro", "ETAP", "SBC Standards"],
+                img: "proj-villas.jpg"
+            },
+            namk: {
+                title: "NAMK Bank & Al Ahliyyah",
+                tags: ["Power Mechanical", "System Upgrades", "Commercial Power"],
+                desc: "<p>Delivered structured engineering assessments and electrical system layouts across both commercial and institutional sectors.</p><p>Designed complete power mechanical system layouts for the NAMK Bank facility. Authored the executive renovation plan upgrading the electrical and digital infrastructure systems at Al Ahliyyah School.</p>",
+                software: ["Jordanian National Codes", "AutoCAD", "Revit", "ETAP"],
+                img: "proj-commercial.jpg"
+            }
+        };
+
+        const modal = document.getElementById('project-modal');
+
+        function openProject(id) {
+            const data = projectData[id];
+            
+            // Populate Modal
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-desc').innerHTML = data.desc;
+            
+            const imgEl = document.getElementById('modal-img');
+            imgEl.src = data.img;
+            imgEl.style.display = 'block'; 
+            
+            // Populate Tags
+            const tagContainer = document.getElementById('modal-tags');
+            tagContainer.innerHTML = '';
+            data.tags.forEach(tag => {
+                tagContainer.innerHTML += `<span class="px-3 py-1 bg-[#0a0f16] border border-slate-800 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
+            });
+
+            // Populate Software
+            const softContainer = document.getElementById('modal-software');
+            softContainer.innerHTML = '';
+            data.software.forEach(soft => {
+                softContainer.innerHTML += `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-semibold rounded-md">${soft}</span>`;
+            });
+
+            // Open Modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeProject() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal if clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProject();
+        });
+    </script>
+</body>
+</html>
