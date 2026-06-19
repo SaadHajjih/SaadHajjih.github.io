@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Sa'ed Hajjih | Electrical Design Engineer</title>
+    <meta name="title" content="Sa'ed Hajjih | Electrical Design Engineer">
+    <meta name="description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids. View portfolio and engineering stack.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sa-edhajjih.github.io/">
+    <meta property="og:title" content="Sa'ed Hajjih | Electrical Design Engineer">
+    <meta property="og:description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids.">
+    <meta property="og:image" content="https://sa-edhajjih.github.io/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sa-edhajjih.github.io/">
+    <meta property="twitter:title" content="Sa'ed Hajjih | Electrical Design Engineer">
+    <meta property="twitter:description" content="Electrical Design Engineer specializing in mission-critical power systems, BIM coordination, and hybrid microgrids.">
+    <meta property="twitter:image" content="https://sa-edhajjih.github.io/og-image.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <meta property="og:title" content="Sa'ed Hajjih | Electrical Design Engineer">
-    <meta property="og:description" content="Mission-critical power systems, BIM coordination, and hybrid microgrids.">
-    <meta property="og:type" content="website">
-
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -18,9 +28,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            400: '#34d399', // Emerald 400
-                            500: '#10b981', // Emerald 500
-                            600: '#059669', // Emerald 600
+                            400: '#34d399', 
+                            500: '#10b981', 
+                            600: '#059669', 
                         }
                     },
                     animation: {
@@ -54,19 +64,17 @@
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Hide default cursor for the custom effect */
+        /* Custom Cursor Elements */
         @media (pointer: fine) {
             body { cursor: none; }
         }
-
-        /* Custom Cursor Elements */
         #cursor-dot {
             width: 8px; height: 8px; background-color: #10b981; border-radius: 50%;
             position: fixed; pointer-events: none; z-index: 9999;
@@ -79,13 +87,22 @@
         }
         .hover-active #cursor-ring { width: 50px; height: 50px; background-color: rgba(16, 185, 129, 0.1); border-color: transparent; }
 
-        /* Outline Text Effect - THICKENED FOR BETTER VISIBILITY */
+        /* Outline Text Effect */
         .text-outline {
-            -webkit-text-stroke: 2px #94a3b8; /* Darker Slate-400 for light mode */
+            -webkit-text-stroke: 2px #94a3b8;
             color: transparent;
         }
         .dark .text-outline {
-            -webkit-text-stroke: 2px #475569; /* Darker Slate-600 for dark mode */
+            -webkit-text-stroke: 2px #475569;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            opacity: 0; pointer-events: none; transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s;
+        }
+        #back-to-top.visible {
+            opacity: 1; pointer-events: auto; transform: translateY(0);
         }
 
         /* Modal Transitions */
@@ -93,12 +110,36 @@
         #project-modal.active { opacity: 1; pointer-events: auto; }
         .modal-content { transform: translateY(20px); transition: transform 0.3s ease 0.1s; }
         #project-modal.active .modal-content { transform: translateY(0); }
+
+        /* Print Stylesheet */
+        @media print {
+            body { background: white !important; color: black !important; }
+            .dark { background: white !important; color: black !important; }
+            /* Hide non-essential UI elements */
+            nav, #mobile-menu, #cursor-dot, #cursor-ring, button, .skill-tab-btn, footer, #back-to-top, .hover-trigger i { 
+                display: none !important; 
+            }
+            /* Reset colors and borders for ink saving */
+            * { -webkit-text-fill-color: black !important; color: black !important; text-shadow: none !important; box-shadow: none !important; }
+            .text-outline { -webkit-text-stroke: 0px !important; color: black !important; }
+            section { page-break-inside: avoid; border: none !important; padding: 20px 0 !important; margin: 0 !important; }
+            .bg-\[\#0a0f16\], .bg-slate-900, .bg-brand-500 { background: transparent !important; }
+            .border-brand-500 { border-color: black !important; }
+            /* Ensure all content is visible */
+            .skill-tab-content { display: grid !important; }
+            h1, h2, h3 { page-break-after: avoid; }
+            a { text-decoration: underline; color: blue !important; }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
 
     <div id="cursor-dot" class="hidden md:block"></div>
     <div id="cursor-ring" class="hidden md:block"></div>
+
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-brand-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-brand-600 hover:scale-110 transition-all hover-trigger" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-white/80 dark:bg-[#0a0f16]/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -111,14 +152,14 @@
                 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8 nav-links">
-                        <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">About</a>
-                        <a href="#skills" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">Skills</a>
-                        <a href="#projects" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">Projects</a>
-                        <a href="#experience" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">Experience</a>
-                        <a href="#education" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">Education</a>
-                        <a href="#cv-contact" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger nav-item">Contact</a>
+                        <a href="#about" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">About</a>
+                        <a href="#skills" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Skills</a>
+                        <a href="#projects" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Projects</a>
+                        <a href="#experience" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Experience</a>
+                        <a href="#education" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Education</a>
+                        <a href="#cv-contact" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Contact</a>
                         
-                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all hover-trigger">
+                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all hover-trigger" aria-label="Toggle Theme">
                             <i class="fas fa-moon dark:hidden"></i>
                             <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         </button>
@@ -130,11 +171,11 @@
                 </div>
 
                 <div class="md:hidden flex items-center gap-4 z-50">
-                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all" aria-label="Toggle Theme">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
-                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-900 dark:text-white focus:outline-none transition-colors">
+                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-900 dark:text-white focus:outline-none transition-colors" aria-label="Open Menu">
                         <i id="mobile-icon" class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -521,6 +562,35 @@
         </div>
     </section>
 
+    <section id="certifications" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Professional Certifications</h2>
+            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
+        </div>
+
+        <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
+            <div class="relative pl-6 md:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Licensed Electrical Engineer</h3>
+                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Issued Aug 2025</span>
+                </div>
+                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Jordan Engineers Association (نقابة المهندسين الأردنيين)</h4>
+                <p class="text-xs md:text-sm font-mono text-slate-500 dark:text-slate-500">Active Licensure Status</p>
+            </div>
+
+            <div class="relative pl-6 md:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Ultimate Electrical Design Course from Zero to Hero</h3>
+                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">2025</span>
+                </div>
+                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Udemy Professional Credential</h4>
+                <p class="text-sm md:text-base text-slate-600 dark:text-slate-400">Comprehensive framework tracking core engineering principles, detailed sizing calculations, and panel coordination from layout development through construction documentation.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
         <div class="grid lg:grid-cols-2 gap-16">
             
@@ -597,6 +667,7 @@
 
     <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm p-4 sm:p-6 md:p-12">
         <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
+            
             <button onclick="closeProject()" class="absolute top-3 right-3 md:top-4 md:right-4 z-50 w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger">
                 <i class="fas fa-times"></i>
             </button>
@@ -606,16 +677,26 @@
                 <span class="absolute font-mono text-sm text-slate-400 dark:text-slate-600 z-0">[ Upload Image ]</span>
             </div>
             
-            <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto">
+            <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto relative flex flex-col">
                 <div id="modal-tags" class="flex flex-wrap gap-2 mb-4 md:mb-6"></div>
                 <h2 id="modal-title" class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6">Project Title</h2>
-                <div class="w-12 h-1 bg-brand-500 mb-6"></div>
-                <div id="modal-desc" class="text-slate-600 dark:text-slate-400 space-y-4 leading-relaxed text-sm md:text-base">
+                <div class="w-12 h-1 bg-brand-500 mb-6 shrink-0"></div>
+                <div id="modal-desc" class="text-slate-600 dark:text-slate-400 space-y-4 leading-relaxed text-sm md:text-base flex-grow">
                 </div>
                 
-                <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-slate-200 dark:border-slate-800">
-                    <h4 class="text-[10px] font-mono text-brand-500 uppercase tracking-widest mb-4">Core Standards & Software</h4>
-                    <div id="modal-software" class="flex flex-wrap gap-2"></div>
+                <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-end">
+                    <div>
+                        <h4 class="text-[10px] font-mono text-brand-500 uppercase tracking-widest mb-4">Core Standards & Software</h4>
+                        <div id="modal-software" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex gap-2 ml-4 shrink-0">
+                        <button onclick="navigateProject(-1)" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger" aria-label="Previous Project">
+                            <i class="fas fa-chevron-left text-sm"></i>
+                        </button>
+                        <button onclick="navigateProject(1)" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger" aria-label="Next Project">
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -629,20 +710,35 @@
             document.documentElement.classList.toggle('dark');
         }
 
-        /* SCROLL REVEAL ANIMATIONS */
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // when 100px of element is visible, animate
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+        /* BACK TO TOP BUTTON LOGIC */
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
             }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on initial load
+        });
+
+        /* INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS (Performance Optimized) */
+        const revealOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once it's revealed
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(section => {
+            revealObserver.observe(section);
+        });
 
         /* SCROLLSPY (ACTIVE NAVIGATION HIGHLIGHTING) */
         const sections = document.querySelectorAll("section");
@@ -653,15 +749,16 @@
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
+                // If scroll is past the top 1/3rd of the section
                 if (scrollY >= (sectionTop - sectionHeight / 3)) {
                     current = section.getAttribute("id");
                 }
             });
 
             navLinks.forEach((link) => {
-                link.classList.remove("text-brand-500", "dark:text-brand-400");
+                link.classList.remove("text-brand-500", "dark:text-brand-400", "font-bold");
                 if (link.getAttribute("href") === `#${current}`) {
-                    link.classList.add("text-brand-500", "dark:text-brand-400");
+                    link.classList.add("text-brand-500", "dark:text-brand-400", "font-bold");
                 }
             });
         });
@@ -720,7 +817,7 @@
             });
         }
 
-        /* PROJECT MODAL DATA & LOGIC */
+        /* PROJECT MODAL DATA & NAVIGATION LOGIC */
         const projectData = {
             shatrah: {
                 title: "Al-Shatrah Hospital (Iraq)",
@@ -752,31 +849,56 @@
             }
         };
 
+        const projectKeys = Object.keys(projectData);
+        let currentProjectIndex = 0;
         const modal = document.getElementById('project-modal');
 
-        function openProject(id) {
+        function renderModalContent() {
+            const id = projectKeys[currentProjectIndex];
             const data = projectData[id];
-            document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-desc').innerHTML = data.desc;
             
-            const imgEl = document.getElementById('modal-img');
-            imgEl.src = data.img;
-            imgEl.style.display = 'block'; 
+            // Fade out slightly for a smooth transition effect between projects
+            const contentArea = document.getElementById('modal-desc').parentElement;
+            contentArea.style.opacity = '0.5';
             
-            const tagContainer = document.getElementById('modal-tags');
-            tagContainer.innerHTML = '';
-            data.tags.forEach(tag => {
-                tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-[#0a0f16] border border-slate-300 dark:border-slate-800 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
-            });
+            setTimeout(() => {
+                document.getElementById('modal-title').innerText = data.title;
+                document.getElementById('modal-desc').innerHTML = data.desc;
+                
+                const imgEl = document.getElementById('modal-img');
+                imgEl.src = data.img;
+                imgEl.style.display = 'block'; 
+                
+                const tagContainer = document.getElementById('modal-tags');
+                tagContainer.innerHTML = '';
+                data.tags.forEach(tag => {
+                    tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-[#0a0f16] border border-slate-300 dark:border-slate-800 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
+                });
 
-            const softContainer = document.getElementById('modal-software');
-            softContainer.innerHTML = '';
-            data.software.forEach(soft => {
-                softContainer.innerHTML += `<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-md">${soft}</span>`;
-            });
+                const softContainer = document.getElementById('modal-software');
+                softContainer.innerHTML = '';
+                data.software.forEach(soft => {
+                    softContainer.innerHTML += `<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-md">${soft}</span>`;
+                });
+                
+                contentArea.style.opacity = '1';
+                contentArea.style.transition = 'opacity 0.2s ease';
+            }, 100);
+        }
 
+        function openProject(id) {
+            currentProjectIndex = projectKeys.indexOf(id);
+            renderModalContent();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; 
+        }
+
+        function navigateProject(direction) {
+            currentProjectIndex += direction;
+            // Wrap around logic
+            if (currentProjectIndex < 0) currentProjectIndex = projectKeys.length - 1;
+            if (currentProjectIndex >= projectKeys.length) currentProjectIndex = 0;
+            renderModalContent();
         }
 
         function closeProject() {
@@ -784,8 +906,17 @@
             document.body.style.overflow = 'auto'; 
         }
 
+        // Close modal if clicking outside the content area
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeProject();
+        });
+        
+        // Add keyboard navigation for the modal (Escape to close, Arrows to navigate)
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeProject();
+            if (e.key === 'ArrowRight') navigateProject(1);
+            if (e.key === 'ArrowLeft') navigateProject(-1);
         });
     </script>
 </body>
