@@ -219,3 +219,4 @@ html:not(.dark) .readout { background: rgba(255,255,255,.8); border-color: #e2e8
 [dir="rtl"] #projects [onclick^="openProject"]:hover h3::after { transform: translateX(0); }
 [dir="rtl"] .readout::after { animation-direction: reverse; }
 [dir="rtl"] #circuit-bg { transform: translateX(50%) scaleX(-1); right: 50%; left: auto; }
+[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1; }
