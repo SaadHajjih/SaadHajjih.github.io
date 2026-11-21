@@ -1,980 +1,250 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang");if(l==="ar"){document.documentElement.lang="ar";document.documentElement.dir="rtl";}}catch(e){}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Sa'ed Hajjih | Electrical Design Engineer</title>
-    <meta name="title" content="Sa'ed Hajjih | Electrical Design Engineer">
-    <meta name="description" content="Electrical Design Engineer specializing in power distribution, electrical building systems, and engineering design. View portfolio and engineering stack.">
-
+    <meta name="description" content="Sa'ed Hajjih, electrical design engineer in Amman, Jordan. Power, lighting and low-current systems for buildings in Jordan and Iraq.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://saadhajjih.github.io/">
     <meta property="og:title" content="Sa'ed Hajjih | Electrical Design Engineer">
-    <meta property="og:description" content="Electrical Design Engineer specializing in power distribution, electrical building systems, and engineering design.">
+    <meta property="og:description" content="Electrical design engineer in Amman, Jordan. Power, lighting and low-current systems for buildings in Jordan and Iraq.">
     <meta property="og:image" content="https://saadhajjih.github.io/images/og-image.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://saadhajjih.github.io/">
-    <meta property="twitter:title" content="Sa'ed Hajjih | Electrical Design Engineer">
-    <meta property="twitter:description" content="Electrical Design Engineer specializing in power distribution, electrical building systems, and engineering design.">
-    <meta property="twitter:image" content="https://saadhajjih.github.io/images/og-image.jpg">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/enhance.css?v=4d5bd864">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <meta name="theme-color" content="#0a0f16">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
-    
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark ::-webkit-scrollbar-track { background: #0a0f16; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #1e293b; }
-        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
-
-        /* Hide scrollbar for mobile elements but allow scrolling */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Preloader Animations */
-        .boot-progress {
-            width: 0%;
-            animation: bootLoad 1.5s ease-in-out forwards;
-        }
-        @keyframes bootLoad {
-            0% { width: 0%; }
-            30% { width: 40%; }
-            60% { width: 75%; }
-            100% { width: 100%; }
-        }
-
-        /* Fade-in initial animation */
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Scroll Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Custom Cursor Elements */
-        @media (pointer: fine) {
-            body { cursor: none; }
-        }
-        #cursor-dot {
-            width: 8px; height: 8px; background-color: #10b981; border-radius: 50%;
-            position: fixed; pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: transform 0.15s ease-out;
-        }
-        #cursor-ring {
-            width: 36px; height: 36px; border: 1px solid rgba(16, 185, 129, 0.5); border-radius: 50%;
-            position: fixed; pointer-events: none; z-index: 9998;
-            transform: translate(-50%, -50%); transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
-        }
-        .hover-active #cursor-ring { width: 50px; height: 50px; background-color: rgba(16, 185, 129, 0.1); border-color: transparent; }
-
-        /* Outline Text Effect */
-        .text-outline {
-            -webkit-text-stroke: 2px #94a3b8;
-            color: transparent;
-        }
-        .dark .text-outline {
-            -webkit-text-stroke: 2px #475569;
-        }
-
-        /* Back to Top Button */
-        #back-to-top {
-            opacity: 0; pointer-events: none; transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s;
-        }
-        #back-to-top.visible {
-            opacity: 1; pointer-events: auto; transform: translateY(0);
-        }
-
-        /* Modal Transitions */
-        #project-modal { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-        #project-modal.active { opacity: 1; pointer-events: auto; }
-        .modal-content { transform: translateY(20px); transition: transform 0.3s ease 0.1s; }
-        #project-modal.active .modal-content { transform: translateY(0); }
-
-        /* Print Stylesheet */
-        @media print {
-            body { background: white !important; color: black !important; }
-            .dark { background: white !important; color: black !important; }
-            nav, #mobile-menu, #cursor-dot, #cursor-ring, button, .skill-tab-btn, footer, #back-to-top, .hover-trigger i, #preloader { display: none !important; }
-            * { -webkit-text-fill-color: black !important; color: black !important; text-shadow: none !important; box-shadow: none !important; }
-            .text-outline { -webkit-text-stroke: 0px !important; color: black !important; }
-            section { page-break-inside: avoid; border: none !important; padding: 20px 0 !important; margin: 0 !important; }
-            .bg-\[\#0a0f16\], .bg-slate-900, .bg-brand-500 { background: transparent !important; }
-            .border-brand-500 { border-color: black !important; }
-            .skill-tab-content { display: grid !important; }
-            h1, h2, h3 { page-break-after: avoid; }
-            a { text-decoration: underline; color: blue !important; }
-        }
-    </style>
-    <link rel="stylesheet" href="assets/tw.css?v=4d5bd864">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sa'ed Hajjih | Electrical Design Engineer">
+    <meta name="twitter:description" content="Electrical design engineer in Amman, Jordan. Power, lighting and low-current systems for buildings in Jordan and Iraq.">
+    <meta name="twitter:image" content="https://saadhajjih.github.io/images/og-image.jpg">
+    <meta name="theme-color" content="#f7f9fb">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="assets/site.css?v=96c4fb9c">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0a0f16] dark:text-slate-300 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-hidden">
+<body>
+    <a class="skip" href="#main">Skip to content</a>
 
-    <div id="scroll-progress"></div>
-
-    <div id="preloader" data-no-i18n class="fixed inset-0 z-[100] bg-[#0a0f16] flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="relative flex flex-col items-center">
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 animate-pulse">S<span class="text-brand-500">.</span>H</h1>
-            <div class="w-48 md:w-64 h-[2px] bg-slate-800 rounded overflow-hidden">
-                <div class="h-full bg-brand-500 boot-progress shadow-[0_0_10px_#10b981]"></div>
-            </div>
-            <div id="boot-log"></div>
-        </div>
-    </div>
-
-    <div id="cursor-dot" class="hidden md:block"></div>
-    <div id="cursor-ring" class="hidden md:block"></div>
-
-    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-brand-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-brand-600 hover:scale-110 transition-all hover-trigger" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-white/80 dark:bg-[#0a0f16]/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 z-50">
-                    <a href="#" data-no-i18n class="text-2xl font-extrabold tracking-tighter text-slate-900 dark:text-white hover-trigger">
-                        S<span class="text-brand-500">.</span>Hajjih
-                    </a>
-                </div>
-                
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-8 nav-links">
-                        <a href="#about" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">About</a>
-                        <a href="#skills" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Skills</a>
-                        <a href="#projects" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Projects</a>
-                        <a href="#experience" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Experience</a>
-                        <a href="#education" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Education</a>
-                        <a href="#certifications" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Certifications</a>
-                        <a href="#cv-contact" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Contact</a>
-                        
-                        <button type="button" data-lang-toggle class="lang-toggle hover-trigger" aria-label="التبديل إلى العربية">عربي</button>
-                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all hover-trigger" aria-label="Toggle Theme">
-                            <i class="fas fa-moon dark:hidden"></i>
-                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-
-                        <a href="resume.pdf" download="Saed_Hajjih_Resume.pdf" target="_blank" class="px-5 py-2.5 text-sm font-semibold border-2 border-brand-500 text-brand-600 dark:text-brand-400 hover:bg-brand-500 hover:text-white dark:hover:text-white rounded-md transition-all hover-trigger">
-                            Resume
-                        </a>
-                    </div>
-                </div>
-
-                <div class="md:hidden flex items-center gap-4 z-50">
-                    <button type="button" data-lang-toggle class="lang-toggle " aria-label="التبديل إلى العربية">عربي</button>
-                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all" aria-label="Toggle Theme">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                    </button>
-                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-900 dark:text-white focus:outline-none transition-colors" aria-label="Open Menu">
-                        <i id="mobile-icon" class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a href="#top" class="brand" data-no-i18n>Sa'ed Hajjih</a>
+            <nav class="nav" id="nav" aria-label="Main">
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="topbar-actions">
+                <button type="button" class="lang" data-lang-toggle lang="ar">عربي</button>
+                <a class="btn btn-small" href="resume.pdf" download="Saed_Hajjih_Resume.pdf">Resume</a>
+                <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-[#0a0f16]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center space-y-6 md:hidden overflow-y-auto">
-        <a href="#about" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">About</a>
-        <a href="#skills" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Skills</a>
-        <a href="#projects" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Projects</a>
-        <a href="#experience" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Experience</a>
-        <a href="#education" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Education</a>
-        <a href="#certifications" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Certifications</a>
-        <a href="#cv-contact" onclick="toggleMobileMenu()" class="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Contact</a>
-        <a href="resume.pdf" download="Saed_Hajjih_Resume.pdf" onclick="toggleMobileMenu()" class="mt-4 px-8 py-3 text-lg font-bold border-2 border-brand-500 text-brand-600 dark:text-brand-400 rounded-md">
-            Resume
-        </a>
-    </div>
-
-    <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 max-w-7xl mx-auto px-6 lg:px-8">
-        <div id="circuit-bg" aria-hidden="true"></div>
-        <div id="hero-content" class="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full opacity-0">
-            
-            <div class="lg:col-span-7 flex flex-col justify-center">
-                <div class="relative mb-6 select-none cursor-default hover-trigger">
-                    <div class="text-[4.5rem] sm:text-[6rem] md:text-[7rem] leading-[0.8] font-black text-outline uppercase tracking-tighter">
-                        Sa'ed
-                    </div>
-                    <h1 class="text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-[0.8] font-black text-slate-900 dark:text-white uppercase tracking-tighter -mt-2">
-                        Hajjih<span class="text-brand-500">.</span>
-                    </h1>
+    <main id="main">
+        <section class="hero wrap" id="top">
+            <div class="hero-text">
+                <h1 class="hero-name"><span data-i18n="name.first">Sa'ed</span> <span data-i18n="name.last">Hajjih</span></h1>
+                <p class="hero-role">Electrical design engineer, Amman</p>
+                <p class="hero-lede">I design power, lighting and low-current systems for buildings in Jordan and Iraq. Most of my work is drawings, calculations, BOQs and shop drawing reviews for hospitals, schools, offices and homes.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="resume.pdf" download="Saed_Hajjih_Resume.pdf">Download resume</a>
+                    <a class="btn btn-ghost" href="mailto:S.M.Hajeh@gmail.com">Email me</a>
                 </div>
-                
-                <p class="font-mono text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 tracking-wide leading-relaxed">
-                    <span class="text-brand-500">&gt;</span> <strong class="text-slate-900 dark:text-slate-200">Electrical Design Engineer</strong>
-                    <span class="text-slate-400 dark:text-slate-600 mx-1">//</span>
-                    <span id="typer" class="text-brand-600 dark:text-brand-400 font-semibold"></span><span class="caret">&#9613;</span>
-                </p>
-                
-                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl" data-i18n="hero.summary">
-                    Electrical Design Engineer with expertise in <strong class="text-slate-900 dark:text-white">power distribution, electrical building systems, and engineering design</strong>. Combining technical precision, industry standards, and practical problem-solving to deliver reliable infrastructure for commercial, residential, and healthcare projects.
-                </p>
-                
-                <div class="flex flex-wrap gap-4 mb-10">
-                    <a href="#projects" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:bg-brand-600 transition-colors hover-trigger w-full sm:w-auto text-center">
-                        VIEW WORK &darr;
-                    </a>
-                    <a href="#cv-contact" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase rounded hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger w-full sm:w-auto text-center">
-                        GET IN TOUCH
-                    </a>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-6 sm:gap-8 font-mono text-xs text-slate-500 dark:text-slate-400">
-                    <a href="https://github.com/SaadHajjih" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-github text-lg"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fab fa-linkedin text-lg"></i> LinkedIn</a>
-                    <a href="mailto:S.M.Hajeh@gmail.com" class="flex items-center gap-2 hover:text-brand-500 transition-colors hover-trigger"><i class="fas fa-envelope text-lg"></i> Email</a>
-                </div>
+                <p class="hero-note">Licensed electrical engineer, Jordan Engineers Association. Currently at Consultancies House for Ultimate Management (CHUM).</p>
             </div>
-
-            <div class="lg:col-span-5 relative group hover-trigger mt-10 lg:mt-0">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-500 to-emerald-800 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                
-                <div class="relative bg-white dark:bg-[#0d121c] border border-slate-200 dark:border-slate-800 rounded-xl p-6 md:p-8 shadow-xl">
-                    <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
-                        <span class="font-mono text-xs text-brand-500 tracking-widest uppercase">Operational Profile</span>
-                        <div class="flex gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6 font-mono text-xs md:text-sm break-words">
-                        <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
-                            <span>Status</span>
-                            <span class="text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Employed @ CHUM
-                            </span>
-                        </div>
-
-                        <div class="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-4">
-                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
-                                <span>Location</span>
-                                <span class="text-slate-900 dark:text-slate-200 font-bold">Amman, Jordan</span>
-                            </div>
-                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
-                                <span>Specialization</span>
-                                <span class="text-slate-900 dark:text-slate-200 font-bold text-right">ELV & Automation</span>
-                            </div>
-                            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400 pt-2">
-                                <span>Analytics</span>
-                                <a href="https://hits.sh/saadhajjih.github.io/" target="_blank" class="hover-trigger transition-opacity flex items-center">
-                                    <img src="https://hits.sh/saadhajjih.github.io.svg?style=for-the-badge&label=VIEWS&color=10b981&labelColor=1e293b" 
-                                         alt="Views" 
-                                         class="h-6 rounded hover:opacity-80"
-                                         onerror="this.outerHTML='<span class=\'px-3 py-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] tracking-widest font-bold rounded text-brand-500 hover:bg-brand-500 hover:text-white transition-colors\'>VIEW STATS &nearr;</span>'">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-
-    <section id="stats" class="max-w-7xl mx-auto px-6 lg:px-8 pb-20 -mt-6 relative z-10" aria-label="At a glance">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="readout" style="--delay:0s">
-                <div class="font-mono text-[10px] tracking-widest uppercase text-slate-500 mb-2">Design Projects</div>
-                <div class="flex items-baseline gap-2"><span class="val text-4xl md:text-5xl font-black text-slate-900 dark:text-white" data-count="20">0</span><span class="text-3xl md:text-4xl font-black text-brand-500">+</span><span class="font-mono text-xs text-brand-500">PRJ</span></div>
-                <div class="font-mono text-[10px] text-slate-500 mt-2">Jordan &amp; Iraq · Commercial · Healthcare · Industrial</div>
-            </div>
-            <div class="readout" style="--delay:.6s">
-                <div class="font-mono text-[10px] tracking-widest uppercase text-slate-500 mb-2">Design & Analysis Tools</div>
-                <div class="flex items-baseline gap-2"><span class="val text-4xl md:text-5xl font-black text-slate-900 dark:text-white" data-count="7">0</span><span class="font-mono text-xs text-brand-500">SW</span></div>
-                <div class="font-mono text-[10px] text-slate-500 mt-2">ETAP · Revit · AutoCAD · DIALux · Navisworks · PVsyst · HOMER</div>
-            </div>
-            <div class="readout" style="--delay:1.2s">
-                <div class="font-mono text-[10px] tracking-widest uppercase text-slate-500 mb-2">Code Frameworks</div>
-                <div class="flex items-baseline gap-2"><span class="val text-4xl md:text-5xl font-black text-slate-900 dark:text-white" data-count="4">0</span><span class="font-mono text-xs text-brand-500">STD</span></div>
-                <div class="font-mono text-[10px] text-slate-500 mt-2">NFPA · CIBSE · SBC · Jordanian Codes</div>
-            </div>
-            <div class="readout" style="--delay:1.8s">
-                <div class="font-mono text-[10px] tracking-widest uppercase text-slate-500 mb-2">Licensed Engineer</div>
-                <div class="flex items-baseline gap-2"><span class="val text-4xl md:text-5xl font-black text-slate-900 dark:text-white" data-count="2025" data-from="2000">2025</span><span class="font-mono text-xs text-brand-500">JEA</span></div>
-                <div class="font-mono text-[10px] text-slate-500 mt-2">Jordan Engineers Association</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <figure class="lg:col-span-4 max-w-sm mx-auto lg:mx-0 w-full">
-                <div class="portrait-frame">
-                    <span class="pf-corner pf-tl"></span><span class="pf-corner pf-tr"></span><span class="pf-corner pf-bl"></span><span class="pf-corner pf-br"></span>
-                    <picture>
-                        <source srcset="images/portrait.webp" type="image/webp">
-                        <img src="images/portrait.jpg" alt="Portrait of Sa'ed Hajjih" width="640" height="640" loading="lazy" class="w-full aspect-square object-cover rounded-lg">
-                    </picture>
-                    <span class="pf-badge"><span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> <span>Available for projects</span></span>
-                </div>
-                <figcaption class="mt-4 font-mono text-[10px] tracking-widest uppercase text-slate-500 flex justify-between"><span>Fig. 01</span><span>Amman, Jordan</span></figcaption>
+            <figure class="hero-photo">
+                <picture>
+                    <source srcset="images/portrait.webp" type="image/webp">
+                    <img src="images/portrait.jpg" alt="Sa'ed Hajjih" width="640" height="640">
+                </picture>
             </figure>
+        </section>
 
-            <div class="lg:col-span-8 space-y-6 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                <p data-i18n="about.p1">Hello! I'm Sa'ed, an <strong>Electrical Power Engineer</strong> and <strong>Electrical Design Engineer</strong> based in Amman, Jordan.</p>
-                <p data-i18n="about.p2">I specialize in the design of electrical power, lighting, and ELV systems for commercial, healthcare, residential, and mixed-use developments. My work includes electrical design calculations, technical documentation, tender package preparation, BOQ development, site supervision, inspections, and electrical system design using <strong>ETAP, Revit, DIALux, AutoCAD, and Navisworks</strong>.</p>
-                <p data-i18n="about.p3">Beyond my professional work, I have a strong interest in low-current systems, networking, structured cabling infrastructure, virtualization, and self-hosted server environments. I maintain a personal home lab where I deploy and manage servers, storage, networking equipment, and self-hosted services.</p>
-                <p data-i18n="about.p4">I am currently expanding my expertise in BIM workflows, advanced electrical design, and intelligent building systems while delivering safe, efficient, and code-compliant designs in accordance with <strong>NFPA, CIBSE, the Saudi Building Code (SBC), and Jordanian regulations</strong>.</p>
+        <section class="section wrap" id="about">
+            <h2>What I work on</h2>
+            <div class="columns">
+                <div>
+                    <h3>Power and lighting</h3>
+                    <ul class="plain">
+                        <li>Low-voltage distribution, panel and load schedules</li>
+                        <li>Cable sizing, voltage drop and short-circuit checks</li>
+                        <li>Normal, UPS and standby power</li>
+                        <li>Earthing and grounding grid design</li>
+                        <li>Lighting design and calculations in DIALux evo</li>
+                        <li>Grid-tied PV studies in PVsyst and HOMER Pro</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Low-current systems</h3>
+                    <ul class="plain">
+                        <li>Fire alarm</li>
+                        <li>CCTV, laid out to the DORI standard</li>
+                        <li>Access control</li>
+                        <li>Structured cabling, MDF and IDF rooms</li>
+                        <li>Wi-Fi coverage planning with NetSpot</li>
+                        <li>Public address</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tools and codes</h3>
+                    <p>I draw in AutoCAD and Revit, coordinate in Navisworks and run studies in ETAP. Spreadsheets for calculations and BOQs are done in Excel.</p>
+                    <p>I design to NFPA 72, CIBSE guidance, the Saudi Building Code and the Jordanian national codes.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Technical Toolkit</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-        <p class="text-slate-600 dark:text-slate-400 mb-12 max-w-2xl">The systems I design, and the tools and standards I use to deliver them.</p>
-
-        <div class="tk-grid">
-            <div class="tk-panel tk-systems">
-                <div class="tk-head"><i class="fas fa-diagram-project"></i><h3>Systems I Design</h3></div>
-                <div class="sys-grid"><div class="sys-tile"><i class="fas fa-bolt"></i><span>Power Distribution</span></div><div class="sys-tile"><i class="fas fa-lightbulb"></i><span>Lighting Design</span></div><div class="sys-tile"><i class="fas fa-bell"></i><span>Fire Alarm</span></div><div class="sys-tile"><i class="fas fa-video"></i><span>CCTV</span></div><div class="sys-tile"><i class="fas fa-id-card"></i><span>Access Control</span></div><div class="sys-tile"><i class="fas fa-network-wired"></i><span>Structured Cabling</span></div><div class="sys-tile"><i class="fas fa-wifi"></i><span>Wi-Fi Networks</span></div><div class="sys-tile"><i class="fas fa-bullhorn"></i><span>Public Address</span></div><div class="sys-tile"><i class="fas fa-car-battery"></i><span>UPS &amp; Standby Power</span></div><div class="sys-tile"><i class="fas fa-server"></i><span>MDF / IDF Rooms</span></div><div class="sys-tile"><i class="fas fa-solar-panel"></i><span>Solar PV</span></div><div class="sys-tile"><i class="fas fa-arrow-down-wide-short"></i><span>Earthing &amp; Grounding</span></div></div>
-            </div>
-            <div class="tk-panel ">
-                <div class="tk-head"><i class="fas fa-pen-ruler"></i><h3>Design &amp; BIM</h3></div>
-                <div class="chips"><span class="chip">AutoCAD</span><span class="chip">Revit MEP</span><span class="chip">Navisworks</span><span class="chip">BIM 360 / ACC</span><span class="chip">DIALux evo</span><span class="chip">NetSpot</span></div>
-            </div>
-            <div class="tk-panel ">
-                <div class="tk-head"><i class="fas fa-calculator"></i><h3>Analysis &amp; Calculations</h3></div>
-                <div class="chips"><span class="chip">ETAP</span><span class="chip">Load Scheduling</span><span class="chip">Cable Sizing</span><span class="chip">Voltage Drop</span><span class="chip">Short Circuit</span><span class="chip">Grounding Grid</span><span class="chip">Advanced Excel</span></div>
-            </div>
-            <div class="tk-panel tk-codes">
-                <div class="tk-head"><i class="fas fa-scale-balanced"></i><h3>Codes &amp; Standards</h3></div>
-                <div class="chips"><span class="chip">NFPA 72</span><span class="chip">Saudi Building Code</span><span class="chip">CIBSE</span><span class="chip">DORI</span><span class="chip">Jordanian National Codes</span></div>
-            </div>
-            <div class="tk-panel ">
-                <div class="tk-head"><i class="fas fa-solar-panel"></i><h3>Renewables</h3></div>
-                <div class="chips"><span class="chip">PVsyst</span><span class="chip">HOMER Pro</span><span class="chip">Grid-Tied PV</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Projects</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-10">
-            <div onclick="openProject('shatrah')" class="group flex flex-col bg-white dark:bg-[#0d121c]/40 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-48 md:h-60 bg-slate-100 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
-                    <img src="images/proj-shatrah.jpg" alt="Al-Shatrah Hospital" class="relative z-10 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
-                    <span class="absolute flex flex-col items-center gap-2 text-slate-300 dark:text-slate-700"><i class="fas fa-hospital text-5xl"></i><span class="font-mono text-[10px] tracking-widest uppercase">Project visuals coming soon</span></span>
-                </div>
-                <div class="p-6 md:p-8 flex flex-col flex-grow">
-                    <div class="font-mono text-brand-500 text-xs md:text-sm mb-2">Healthcare Infrastructure</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Al-Shatrah Hospital (Iraq)</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow line-clamp-2 text-sm md:text-base">
-                        Managed complex low-voltage distribution and heavy structural containment layouts. Coordinated indoor cable trays to eliminate spatial clashes utilizing Navisworks. Engineered strictly to hospital safety codes.
-                    </p>
-                </div>
-            </div>
-
-            <div onclick="openProject('media')" class="group flex flex-col bg-white dark:bg-[#0d121c]/40 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-48 md:h-60 bg-slate-100 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
-                    <img src="images/proj-media-1.jpg" alt="Schools Admin & Media Center" class="relative z-10 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
-                    <span class="absolute flex flex-col items-center gap-2 text-slate-300 dark:text-slate-700"><i class="fas fa-school text-5xl"></i><span class="font-mono text-[10px] tracking-widest uppercase">Project visuals coming soon</span></span>
-                </div>
-                <div class="p-6 md:p-8 flex flex-col flex-grow">
-                    <div class="font-mono text-brand-500 text-xs md:text-sm mb-2">Power & ELV Systems</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Schools Admin & Media Center</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow line-clamp-2 text-sm md:text-base">
-                        Engineered comprehensive normal and UPS power networks, power for mechanical equipment, and extensive ELV routing including MDF sizing, BOQ generation, and voltage drop calculations.
-                    </p>
-                </div>
-            </div>
-
-            <div onclick="openProject('villas')" class="group flex flex-col bg-white dark:bg-[#0d121c]/40 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-48 md:h-60 bg-slate-100 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
-                    <img src="images/proj-villas.jpg" alt="Smart Villas" class="relative z-10 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
-                    <span class="absolute flex flex-col items-center gap-2 text-slate-300 dark:text-slate-700"><i class="fas fa-house-signal text-5xl"></i><span class="font-mono text-[10px] tracking-widest uppercase">Project visuals coming soon</span></span>
-                </div>
-                <div class="p-6 md:p-8 flex flex-col flex-grow">
-                    <div class="font-mono text-brand-500 text-xs md:text-sm mb-2">Smart Automation & Microgrids</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Luxury Smart Villas</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow line-clamp-2 text-sm md:text-base">
-                        Engineered comprehensive electrical network infrastructure, mapping out IP-CCTV surveillance zones and elevator access control loops. Modeled grid-tied solar arrays utilizing PVsyst and HOMER Pro.
-                    </p>
-                </div>
-            </div>
-
-            <div onclick="openProject('namk')" class="group flex flex-col bg-white dark:bg-[#0d121c]/40 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:-translate-y-2 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer hover-trigger">
-                <div class="h-48 md:h-60 bg-slate-100 dark:bg-[#0a0f16] relative flex items-center justify-center overflow-hidden">
-                    <img src="images/proj-commercial.jpg" alt="Commercial" class="relative z-10 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
-                    <span class="absolute flex flex-col items-center gap-2 text-slate-300 dark:text-slate-700"><i class="fas fa-building text-5xl"></i><span class="font-mono text-[10px] tracking-widest uppercase">Project visuals coming soon</span></span>
-                </div>
-                <div class="p-6 md:p-8 flex flex-col flex-grow">
-                    <div class="font-mono text-brand-500 text-xs md:text-sm mb-2">Commercial & Educational Power</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">NAMK Bank & Al Ahliyyah</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow line-clamp-2 text-sm md:text-base">
-                        Designed complete power mechanical system layouts for NAMK Bank. Authored an executive engineering assessment and system upgrade strategy for Al Ahliyyah School infrastructure.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Experience</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
-            <div class="relative pl-6 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Electrical Design Engineer</h3>
-                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Sep 2025 – Present</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-6">Consultancies House for Ultimate Management (CHUM)</h4>
-                
-                <ul class="space-y-3 text-sm md:text-base text-slate-600 dark:text-slate-400">
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Contributed to the design of comprehensive electrical systems for 20+ commercial, industrial, healthcare, and institutional projects across Jordan and Iraq.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Developed detailed 2D/3D electrical layouts, shop drawings, single-line diagrams, and optimized cable routing using AutoCAD and Revit, with advanced photometric calculations in DIALux evo.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Prepared comprehensive Bills of Quantities (BOQ) and detailed technical specifications for power distribution and integrated low-current systems.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Conducted ETAP simulations, load flow calculations, and grounding grid verifications for an electrical substation in Iraq to validate system stability and cable sizing.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Designed a Wi-Fi network using predictive heat maps to optimize WAP placement, signal coverage, and capacity, eliminating dead zones.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> Designed a CCTV system following the DORI standard, setting camera placement and field-of-view requirements to remove blind spots.</li>
-                </ul>
-            </div>
-            <div class="relative pl-6 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Electrical Engineering Intern</h3>
-                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">Jul 2025 – Sep 2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-6">Arabian Office Automation – Xerox</h4>
-                <ul class="space-y-3 text-sm md:text-base text-slate-600 dark:text-slate-400">
-                    <li class="flex items-start gap-3" data-i18n="exp.intern.b1"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">IT Support &amp; Systems Integration:</strong> Provided technical assistance for multi-functional printer hardware and office automation software, troubleshooting connectivity and integration issues.</li>
-                    <li class="flex items-start gap-3" data-i18n="exp.intern.b2"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">Hardware &amp; Software Troubleshooting:</strong> Diagnosed hardware, firmware, and network interface faults across enterprise multi-functional devices to minimize downtime.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Education</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
-            <div class="relative pl-6 md:pl-10">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">BSc. Electrical Power Engineering</h3>
-                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">Jun 2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-6">Al-Balqa Applied University</h4>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-400">
-                    Focused heavily on renewable energy integration and heavy power load management. Developed expertise in optimizing grid-tied commercial solar arrays paired with battery storage systems utilizing ETAP, HOMER Pro, and PVsyst for precision load calculations.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Licenses & Certifications</h2>
-            <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
-        </div>
-
-        <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
-            <div class="relative pl-6 md:pl-10" data-cert-id="eatd-revit">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Revit for Electrical Engineers</h3>
-                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Oct 2026</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Engineers Academy for Training and Development (EATD)</h4>
-            </div>
-            <div class="relative pl-6 md:pl-10" data-cert-id="eatd-low-current">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Low Current Systems Design</h3>
-                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Sep 2026</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Engineers Academy for Training and Development (EATD)</h4>
-            </div>
-            <div class="relative pl-6 md:pl-10" data-cert-id="udemy-etap">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">The Complete Electrical Power with ETAP &amp; Manual Analysis</h3>
-                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">Aug 2026</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Udemy</h4>
-            </div>
-            <div class="relative pl-6 md:pl-10" data-cert-id="jea-license">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Licensed Electrical Engineer</h3>
-                    <span class="font-mono text-xs md:text-sm text-brand-600 dark:text-brand-400 mt-1 md:mt-0">Issued Aug 2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Jordan Engineers Association (نقابة المهندسين الأردنيين)</h4>
-                <p class="text-xs md:text-sm font-mono text-slate-500 dark:text-slate-500">Active Licensure Status</p>
-            </div>
-
-            <div class="relative pl-6 md:pl-10" data-cert-id="udemy-electrical-design">
-                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Ultimate Electrical Design Course from Zero to Hero</h3>
-                    <span class="font-mono text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-1 md:mt-0">Aug 2025</span>
-                </div>
-                <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Udemy Professional Credential</h4>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-400">Comprehensive framework tracking core engineering principles, detailed sizing calculations, and panel coordination from layout development through construction documentation.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cv-contact" class="py-32 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="grid lg:grid-cols-2 gap-16">
-            
-            <div class="flex flex-col justify-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Let's work together</h2>
-                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-10" data-i18n="contact.p">
-                    Open to new roles, consultancy work and project collaborations in <strong class="text-slate-900 dark:text-white">power, lighting and ELV design</strong>. Send me an email or connect on LinkedIn.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
-                    <a href="mailto:S.M.Hajeh@gmail.com?subject=Hello%20Sa'ed" class="px-6 py-4 bg-brand-500 text-white font-bold font-mono text-xs tracking-widest uppercase hover:bg-brand-600 transition-colors hover-trigger rounded text-center w-full sm:w-auto">
-                        GET IN TOUCH &rarr;
-                    </a>
-                    <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" class="px-6 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold font-mono text-xs tracking-widest uppercase hover:border-brand-500 hover:text-brand-500 transition-colors hover-trigger rounded flex items-center justify-center gap-2 w-full sm:w-auto">
-                        VIEW LINKEDIN &nearr;
-                    </a>
-                </div>
-                <div class="mb-12"></div>
-
-                <div class="font-mono text-[10px] tracking-widest uppercase text-brand-500 mb-4">Core Strengths</div>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">Power Distribution</span>
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">Lighting Design</span>
-                    <span class="px-3 py-1.5 border border-slate-300 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 rounded">ELV Infrastructure</span>
-                </div>
-            </div>
-
-            <div class="bg-transparent border border-slate-300 dark:border-slate-800 rounded-lg p-6 md:p-8 relative hover-trigger mt-8 lg:mt-0">
-                <div class="absolute -top-[10px] left-6 bg-slate-50 dark:bg-[#0a0f16] px-3 font-mono text-[11px] text-brand-500 tracking-widest uppercase leading-none">
-                    Curriculum Vitae
-                </div>
-                
-                <div class="flex flex-col font-mono text-xs md:text-sm">
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500">Name</span>
-                        <span class="text-slate-900 dark:text-white font-bold text-right">Sa'ed Hajjih</span>
+        <section class="section wrap" id="work">
+            <h2>Selected projects</h2>
+            <p class="section-intro">A few of the 20+ projects I have worked on. Select a project for details.</p>
+            <div class="projects">
+                <details class="project">
+                    <summary>
+                        <span class="p-name">Al-Shatrah Hospital</span>
+                        <span class="p-meta">Healthcare, Iraq</span>
+                    </summary>
+                    <div class="p-body">
+                        <p>Low-voltage distribution and cable tray layouts for a hospital. I coordinated the tray routes with the mechanical services in Navisworks to clear clashes in crowded ceiling voids, while keeping to the safety requirements for healthcare buildings.</p>
+                        <p class="p-tools">Revit, AutoCAD, Navisworks. NFPA.</p>
                     </div>
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500">Location</span>
-                        <span class="text-slate-700 dark:text-slate-300 font-medium text-right">Amman, Jordan</span>
+                </details>
+                <details class="project">
+                    <summary>
+                        <span class="p-name">Schools administration and media center</span>
+                        <span class="p-meta">Education</span>
+                    </summary>
+                    <div class="p-body">
+                        <p>Normal and UPS power networks, supplies to the mechanical equipment, and the full low-current network: riser routes, MDF and IDF room sizing, voltage drop calculations and the bill of quantities for procurement.</p>
+                        <p class="p-tools">AutoCAD, Excel.</p>
                     </div>
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500 whitespace-nowrap">Email</span>
-                        <span class="text-brand-500 font-bold text-right break-words max-w-[200px] sm:max-w-none">S.M.Hajeh@gmail.com</span>
+                </details>
+                <details class="project">
+                    <summary>
+                        <span class="p-name">Smart villas</span>
+                        <span class="p-meta">Residential</span>
+                    </summary>
+                    <div class="p-body">
+                        <p>IP CCTV coverage, elevator access control and home automation for high-end villas. I also modelled a grid-tied solar system in PVsyst and HOMER Pro to estimate yield and how much of the load it would offset.</p>
+                        <p class="p-tools">PVsyst, HOMER Pro, ETAP. Saudi Building Code.</p>
                     </div>
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500">Degree</span>
-                        <span class="text-slate-900 dark:text-white font-bold text-right">BSc. Electrical Power Eng.</span>
+                </details>
+                <details class="project">
+                    <summary>
+                        <span class="p-name">NAMK Bank and Al Ahliyyah School</span>
+                        <span class="p-meta">Commercial and education</span>
+                    </summary>
+                    <div class="p-body">
+                        <p>Power layouts for the mechanical systems at NAMK Bank. For Al Ahliyyah School, I assessed the existing electrical and IT infrastructure and wrote the upgrade plan.</p>
+                        <p class="p-tools">AutoCAD, Revit, ETAP. Jordanian national codes.</p>
                     </div>
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500">University</span>
-                        <span class="text-slate-700 dark:text-slate-300 font-medium text-right">Al-Balqa Applied University</span>
+                </details>
+                <details class="project">
+                    <summary>
+                        <span class="p-name">Substation study</span>
+                        <span class="p-meta">Utilities, Iraq</span>
+                    </summary>
+                    <div class="p-body">
+                        <p>ETAP load flow studies and grounding grid checks for an electrical substation, to confirm system stability and cable sizes.</p>
+                        <p class="p-tools">ETAP.</p>
                     </div>
-                    <div class="py-5 flex justify-between items-center gap-4 border-b border-slate-200 dark:border-slate-800">
-                        <span class="text-slate-500">Current Role</span>
-                        <span class="text-slate-700 dark:text-slate-300 font-medium text-right">Electrical Design Engineer</span>
-                    </div>
-                    <div class="py-5 flex justify-between items-center gap-4">
-                        <span class="text-slate-500">Employer</span>
-                        <span class="text-slate-700 dark:text-slate-300 font-medium text-right">CHUM</span>
-                    </div>
-                </div>
+                </details>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="py-12 text-slate-500 dark:text-slate-400 font-mono text-sm border-t border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#0a0f16]">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="flex justify-center gap-6 mb-8">
-                <a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" rel="noopener" class="hover:text-brand-500 transition-colors text-xl hover-trigger" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/SaadHajjih" target="_blank" rel="noopener" class="hover:text-brand-500 transition-colors text-xl hover-trigger" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:S.M.Hajeh@gmail.com" class="hover:text-brand-500 transition-colors text-xl hover-trigger" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="title-block rounded">
-                <div><span class="k">Drawn by</span><span class="v text-slate-900 dark:text-white">Sa'ed Hajjih</span></div>
-                <div><span class="k">Project</span><span class="v text-slate-900 dark:text-white">Personal Portfolio</span></div>
-                <div><span class="k">Dwg No.</span><span class="v brand-cell">SH-PF-001</span></div>
-                <div><span class="k">Rev</span><span class="v text-slate-900 dark:text-white">C</span></div>
-                <div><span class="k">Location</span><span class="v text-slate-900 dark:text-white">Amman, Jordan</span></div>
-                <div><span class="k">Scale</span><span class="v text-slate-900 dark:text-white">NTS</span></div>
-                <div><span class="k">Sheet</span><span class="v text-slate-900 dark:text-white">01 of 01</span></div>
-                <div><span class="k">Date</span><span class="v text-slate-900 dark:text-white" id="tb-date">2026</span></div>
-            </div>
-        </div>
+        <section class="section wrap" id="experience">
+            <h2>Experience</h2>
+            <ol class="timeline">
+                <li>
+                    <p class="t-date">Sep 2025 – present</p>
+                    <div>
+                        <h3>Electrical design engineer</h3>
+                        <p class="t-org">Consultancies House for Ultimate Management (CHUM), Amman</p>
+                        <ul class="bullets">
+                            <li>Electrical design for 20+ commercial, industrial, healthcare and institutional projects in Jordan and Iraq.</li>
+                            <li>2D and 3D electrical layouts, shop drawings, single-line diagrams and cable routing in AutoCAD and Revit, with lighting calculations in DIALux evo.</li>
+                            <li>Bills of quantities and technical specifications for power distribution and low-current systems.</li>
+                            <li>ETAP load flow studies and grounding grid checks for a substation in Iraq.</li>
+                            <li>A Wi-Fi design using predictive heat maps to place access points and remove dead zones.</li>
+                            <li>A CCTV design to the DORI standard, setting camera positions and fields of view to remove blind spots.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="t-date">Jul 2025 – Sep 2025</p>
+                    <div>
+                        <h3>Electrical engineering intern</h3>
+                        <p class="t-org">Arabian Office Automation (Xerox), Amman</p>
+                        <ul class="bullets">
+                            <li>Technical support for multifunction printers and office automation software, including connectivity and integration issues.</li>
+                            <li>Diagnosed hardware, firmware and network faults on enterprise devices to reduce downtime.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="t-date">Jun 2025</p>
+                    <div>
+                        <h3>BSc in Electrical Power Engineering</h3>
+                        <p class="t-org">Al-Balqa Applied University, Amman</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section wrap" id="certificates">
+            <h2>Licence and certificates</h2>
+            <ul class="certs">
+                <li data-cert-id="jea-license">
+                    <div><h3>Licensed electrical engineer</h3><p>Jordan Engineers Association</p></div>
+                    <p class="c-date">Aug 2025</p>
+                </li>
+                <li data-cert-id="eatd-revit">
+                    <div><h3>Revit for electrical engineers</h3><p>Engineers Academy for Training and Development (EATD)</p></div>
+                    <p class="c-date">Oct 2026</p>
+                </li>
+                <li data-cert-id="eatd-low-current">
+                    <div><h3>Low current systems design</h3><p>Engineers Academy for Training and Development (EATD)</p></div>
+                    <p class="c-date">Sep 2026</p>
+                </li>
+                <li data-cert-id="udemy-etap">
+                    <div><h3>The Complete Electrical Power with ETAP &amp; Manual Analysis</h3><p>Udemy</p></div>
+                    <p class="c-date">Aug 2026</p>
+                </li>
+                <li data-cert-id="udemy-electrical-design">
+                    <div><h3>Ultimate Electrical Design Course from Zero to Hero</h3><p>Udemy</p></div>
+                    <p class="c-date">Aug 2025</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section wrap contact" id="contact">
+            <h2>Contact</h2>
+            <p class="section-intro">I'm open to new roles, consultancy work and project collaborations. Email is the quickest way to reach me.</p>
+            <dl class="contact-list">
+                <div><dt>Email</dt><dd><a href="mailto:S.M.Hajeh@gmail.com">S.M.Hajeh@gmail.com</a></dd></div>
+                <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/saedhajjih1" target="_blank" rel="noopener">linkedin.com/in/saedhajjih1</a></dd></div>
+                <div><dt>GitHub</dt><dd><a href="https://github.com/SaadHajjih" target="_blank" rel="noopener">github.com/SaadHajjih</a></dd></div>
+                <div><dt>Location</dt><dd>Amman, Jordan</dd></div>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="footer wrap">
+        <p><span data-no-i18n>© <span id="year">2026</span></span> <span data-i18n="name.full">Sa'ed Hajjih</span></p>
+        <a href="#top">Back to top</a>
     </footer>
 
-    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm p-4 sm:p-6 md:p-12">
-        <div class="modal-content w-full max-w-5xl max-h-[90vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col md:flex-row relative shadow-2xl">
-            
-            <button onclick="closeProject()" class="absolute top-3 right-3 md:top-4 md:right-4 z-50 w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="w-full md:w-1/2 h-48 md:h-auto bg-slate-100 dark:bg-[#0a0f16] flex flex-col border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 overflow-hidden relative shrink-0">
-                <div class="flex-grow flex items-center justify-center relative p-4">
-                    <img id="modal-img" src="" alt="Project" class="max-w-full max-h-full object-contain z-10 drop-shadow-2xl" onerror="this.style.display='none'">
-                    <span class="absolute font-mono text-sm text-slate-400 dark:text-slate-600 z-0" id="modal-img-placeholder"><i class="fas fa-image mr-2"></i>Project visuals coming soon</span>
-                </div>
-                
-                <div id="modal-thumbnails" class="h-20 bg-slate-200 dark:bg-[#111827] border-t border-slate-300 dark:border-slate-800 flex items-center gap-2 px-4 overflow-x-auto no-scrollbar shrink-0">
-                    </div>
-            </div>
-            
-            <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto relative flex flex-col">
-                <div id="modal-tags" class="flex flex-wrap gap-2 mb-4 md:mb-6"></div>
-                <h2 id="modal-title" class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 md:mb-6"></h2>
-                <div class="w-12 h-1 bg-brand-500 mb-6 shrink-0"></div>
-                <div id="modal-desc" class="text-slate-600 dark:text-slate-400 space-y-4 leading-relaxed text-sm md:text-base flex-grow">
-                </div>
-                
-                <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-end">
-                    <div>
-                        <h4 class="text-[10px] font-mono text-brand-500 uppercase tracking-widest mb-4">Core Standards & Software</h4>
-                        <div id="modal-software" class="flex flex-wrap gap-2"></div>
-                    </div>
-                    <div class="flex gap-2 ml-4 shrink-0">
-                        <button onclick="navigateProject(-1)" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger" aria-label="Previous Project">
-                            <i class="fas fa-chevron-left text-sm"></i>
-                        </button>
-                        <button onclick="navigateProject(1)" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-full flex items-center justify-center hover:border-brand-500 hover:text-brand-500 dark:hover:border-brand-500 dark:hover:text-brand-500 transition-colors hover-trigger" aria-label="Next Project">
-                            <i class="fas fa-chevron-right text-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <dialog id="cert-viewer" class="viewer" aria-label="Certificate">
+        <div class="viewer-bar">
+            <p id="cert-viewer-title"></p>
+            <a id="cert-viewer-open" href="#" target="_blank" rel="noopener">Open in new tab</a>
+            <button type="button" id="cert-viewer-close">Close</button>
         </div>
-    </div>
+        <div id="cert-viewer-body" class="viewer-body"></div>
+    </dialog>
 
-    <script>
-        // Force scroll-lock on initial load for preloader
-        document.body.style.overflow = 'hidden';
-
-        // Preloader Logic
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                
-                document.body.style.overflow = 'auto';
-
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                    document.getElementById('hero-content').classList.add('fade-in-up');
-                }, 700); 
-            }, 1500); 
-        });
-
-        // Start in dark mode by default
-        document.documentElement.classList.add('dark');
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-        }
-
-        /* BACK TO TOP BUTTON LOGIC */
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        /* INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS */
-        const revealOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-        
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
-
-        document.querySelectorAll('.reveal').forEach(section => {
-            revealObserver.observe(section);
-        });
-
-        /* SCROLLSPY (ACTIVE NAVIGATION HIGHLIGHTING) */
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-item");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((link) => {
-                link.classList.remove("text-brand-500", "dark:text-brand-400", "font-bold");
-                if (link.getAttribute("href") === `#${current}`) {
-                    link.classList.add("text-brand-500", "dark:text-brand-400", "font-bold");
-                }
-            });
-        });
-
-        /* MOBILE MENU LOGIC */
-        let isMobileMenuOpen = false;
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-icon');
-            isMobileMenuOpen = !isMobileMenuOpen;
-            
-            if (isMobileMenuOpen) {
-                menu.classList.remove('translate-x-full');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-                document.body.style.overflow = 'hidden'; 
-            } else {
-                menu.classList.add('translate-x-full');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-                document.body.style.overflow = 'auto'; 
-            }
-        }
-
-        /* TAB LOGIC FOR SKILLS SECTION */
-        function switchTab(tabId) {
-            document.querySelectorAll('.skill-tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.skill-tab-btn').forEach(el => {
-                el.classList.remove('border-brand-500', 'text-brand-500', 'bg-slate-50', 'dark:bg-[#0d121c]', 'font-bold');
-                el.classList.add('border-transparent', 'text-slate-500', 'hover:text-slate-900', 'dark:hover:text-slate-300');
-            });
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.remove('border-transparent', 'text-slate-500', 'hover:text-slate-900', 'dark:hover:text-slate-300');
-            activeBtn.classList.add('border-brand-500', 'text-brand-500', 'font-bold', 'bg-slate-50', 'dark:bg-[#0d121c]');
-        }
-
-        /* CUSTOM MOUSE TRACKING LOGIC */
-        const dot = document.getElementById('cursor-dot');
-        const ring = document.getElementById('cursor-ring');
-        
-        if (window.matchMedia("(pointer: fine)").matches) {
-            document.addEventListener('mousemove', (e) => {
-                dot.style.left = e.clientX + 'px';
-                dot.style.top = e.clientY + 'px';
-                setTimeout(() => {
-                    ring.style.left = e.clientX + 'px';
-                    ring.style.top = e.clientY + 'px';
-                }, 50);
-            });
-
-            const hoverElements = document.querySelectorAll('.hover-trigger, a, button, .skill-tab-btn');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
-                el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
-            });
-        }
-
-        /* PROJECT MODAL DATA & NAVIGATION LOGIC */
-        const projectData = window.projectData = {
-            shatrah: {
-                title: "Al-Shatrah Hospital (Iraq)",
-                tags: ["LV Distribution", "Clash Detection", "Medical Standard"],
-                desc: "<p>Executed the master electrical design and heavy structural drawing coordination for a major healthcare facility.</p><p>The primary challenge was navigating stringent medical compliance standards while organizing complex low-voltage distribution paths. Utilized <strong>Navisworks</strong> extensively to resolve dense spatial MEP clashes between electrical containment networks and mechanical HVAC lines in tightly congested ceiling spaces.</p>",
-                software: ["NFPA Compliant", "Revit", "Navisworks", "AutoCAD"],
-                images: ["images/proj-shatrah.jpg"]
-            },
-            media: {
-                title: "Schools Admin & Media Center",
-                tags: ["UPS Power", "Mechanical Power", "ELV Routing", "MDF Sizing"],
-                desc: "<p>Engineered complete electrical and low-current infrastructure for a combined educational administration and media facility.</p><p>Scope included detailed design of <strong>normal and UPS power distribution networks</strong>, power supply layout for heavy mechanical HVAC equipment, and rigorous <strong>voltage drop calculations</strong> to ensure stable delivery.</p><p>Additionally led the full ELV system routing, including vertical riser design, precise <strong>MDF/IDF cabinet sizing</strong>, and the final generation of comprehensive Bills of Quantities (BOQ) for procurement.</p>",
-                software: ["AutoCAD", "Excel (BOQ)", "Electrical Calcs"],
-                images: ["images/proj-media-1.jpg", "images/proj-media-2.jpg", "images/proj-media-3.jpg", "images/proj-media-4.jpg"]
-            },
-            villas: {
-                title: "Luxury Smart Villas",
-                tags: ["Home Automation", "CCTV Zones", "Grid-Tied Solar"],
-                desc: "<p>Engineered comprehensive network infrastructure for high-end residential luxury homes.</p><p>The scope included mapping out full IP-CCTV surveillance coverage zones, integrated home automation linkage, and logical elevator access control loops. Additionally, conducted advanced microgrid feasibility studies, modeling grid-tied solar arrays using PVsyst and HOMER Pro to calculate yield and load offset.</p>",
-                software: ["PVsyst", "HOMER Pro", "ETAP", "SBC Standards"],
-                images: ["images/proj-villas.jpg"]
-            },
-            namk: {
-                title: "NAMK Bank & Al Ahliyyah",
-                tags: ["Power Mechanical", "System Upgrades", "Commercial Power"],
-                desc: "<p>Delivered structured engineering assessments and electrical system layouts across both commercial and institutional sectors.</p><p>Designed complete power mechanical system layouts for the NAMK Bank facility. Authored the executive renovation plan upgrading the electrical and digital infrastructure systems at Al Ahliyyah School.</p>",
-                software: ["Jordanian National Codes", "AutoCAD", "Revit", "ETAP"],
-                images: ["images/proj-commercial.jpg"]
-            }
-        };
-
-        const projectKeys = Object.keys(projectData);
-        let currentProjectIndex = 0;
-        let currentImageIndex = 0; 
-        const modal = document.getElementById('project-modal');
-
-        // Function to change the main image based on thumbnail click
-        function setModalImage(index, projectImages) {
-            currentImageIndex = index;
-            const imgEl = document.getElementById('modal-img');
-            const placeholder = document.getElementById('modal-img-placeholder');
-            
-            imgEl.src = projectImages[index];
-            imgEl.style.display = 'block';
-            placeholder.innerHTML = '<i class="fas fa-image mr-2"></i>Project visuals coming soon';
-
-            // Update active state on thumbnails
-            document.querySelectorAll('.modal-thumb').forEach((thumb, i) => {
-                if (i === index) {
-                    thumb.classList.add('border-brand-500', 'opacity-100');
-                    thumb.classList.remove('border-transparent', 'opacity-50');
-                } else {
-                    thumb.classList.remove('border-brand-500', 'opacity-100');
-                    thumb.classList.add('border-transparent', 'opacity-50');
-                }
-            });
-        }
-
-        function renderModalContent() {
-            const id = projectKeys[currentProjectIndex];
-            const data = projectData[id];
-            currentImageIndex = 0; // Reset image index on new project load
-            
-            const contentArea = document.getElementById('modal-desc').parentElement;
-            contentArea.style.opacity = '0.5';
-            
-            setTimeout(() => {
-                document.getElementById('modal-title').innerText = data.title;
-                document.getElementById('modal-desc').innerHTML = data.desc;
-                
-                // Handle Images & Thumbnails
-                const thumbContainer = document.getElementById('modal-thumbnails');
-                thumbContainer.innerHTML = '';
-                
-                if (data.images && data.images.length > 1) {
-                    // Show thumbnail strip if multiple images exist
-                    thumbContainer.style.display = 'flex';
-                    data.images.forEach((imgSrc, index) => {
-                        thumbContainer.innerHTML += `
-                            <button onclick="setModalImage(${index}, ['${data.images.join("','")}'])" 
-                                    class="modal-thumb w-16 h-12 bg-slate-800 rounded flex-shrink-0 border-2 transition-all hover:opacity-100 overflow-hidden ${index === 0 ? 'border-brand-500 opacity-100' : 'border-transparent opacity-50'}">
-                                <img src="${imgSrc}" class="w-full h-full object-cover pointer-events-none" onerror="this.style.display='none'">
-                            </button>
-                        `;
-                    });
-                } else {
-                    // Hide thumbnail strip if only one image
-                    thumbContainer.style.display = 'none';
-                }
-                
-                // Set initial image
-                setModalImage(0, data.images);
-                
-                // Handle Tags
-                const tagContainer = document.getElementById('modal-tags');
-                tagContainer.innerHTML = '';
-                data.tags.forEach(tag => {
-                    tagContainer.innerHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-[#0a0f16] border border-slate-300 dark:border-slate-800 text-[10px] font-mono text-brand-500 uppercase tracking-widest rounded">${tag}</span>`;
-                });
-
-                // Handle Software
-                const softContainer = document.getElementById('modal-software');
-                softContainer.innerHTML = '';
-                data.software.forEach(soft => {
-                    softContainer.innerHTML += `<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-md">${soft}</span>`;
-                });
-                
-                contentArea.style.opacity = '1';
-                contentArea.style.transition = 'opacity 0.2s ease';
-            }, 100);
-        }
-
-        function openProject(id) {
-            currentProjectIndex = projectKeys.indexOf(id);
-            renderModalContent();
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function navigateProject(direction) {
-            currentProjectIndex += direction;
-            if (currentProjectIndex < 0) currentProjectIndex = projectKeys.length - 1;
-            if (currentProjectIndex >= projectKeys.length) currentProjectIndex = 0;
-            renderModalContent();
-        }
-
-        function closeProject() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; 
-        }
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeProject();
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('active')) return;
-            if (e.key === 'Escape') closeProject();
-            if (e.key === 'ArrowRight') navigateProject(1);
-            if (e.key === 'ArrowLeft') navigateProject(-1);
-        });
-    </script>
-    <div id="cert-viewer" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Certificate viewer">
-        <div class="relative w-full max-w-4xl h-[85vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col shadow-2xl">
-            <div class="flex items-center justify-between gap-4 px-5 py-3 border-b border-slate-200 dark:border-slate-800">
-                <span id="cert-viewer-title" class="font-mono text-xs tracking-widest uppercase text-brand-500 truncate"></span>
-                <div class="flex items-center gap-2 shrink-0">
-                    <a id="cert-viewer-open" href="#" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-mono border border-slate-300 dark:border-slate-700 rounded hover:border-brand-500 hover:text-brand-500 transition-colors">OPEN &nearr;</a>
-                    <button id="cert-viewer-close" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:text-brand-500 transition-colors" aria-label="Close"><i class="fas fa-times"></i></button>
-                </div>
-            </div>
-            <div id="cert-viewer-body" class="flex-grow bg-slate-100 dark:bg-[#0a0f16] flex items-center justify-center overflow-auto"></div>
-        </div>
-    </div>
-    <script src="assets/i18n.js?v=4d5bd864" defer></script>
-    <script src="assets/enhance.js?v=4d5bd864" defer></script>
+    <script src="assets/site.js?v=96c4fb9c" defer></script>
 </body>
 </html>
