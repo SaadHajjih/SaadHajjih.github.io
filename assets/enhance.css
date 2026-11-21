@@ -139,3 +139,10 @@ html:not(.dark) .readout { background: rgba(255,255,255,.8); border-color: #e2e8
   .skill-bar { transition: none; transform: none; }
 }
 @media print { #circuit-bg, #scroll-progress { display: none !important; } }
+
+/* Calmer circuit on small screens */
+@media (max-width: 768px) {
+  #circuit-bg { opacity: .45;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 55%, transparent 90%);
+            mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 55%, transparent 90%); }
+}
