@@ -122,3 +122,40 @@
   console.log('%c⚡ Sa\'ed Hajjih — Electrical Design Engineer', 'color:#10b981;font-size:14px;font-weight:bold');
   console.log('%cCircuit verified. Voltage drop within limits. Let\'s talk: S.M.Hajeh@gmail.com', 'color:#94a3b8');
 })();
+
+/* ===== Certificate buttons + viewer ===== */
+(() => {
+  const v = document.getElementById('cert-viewer');
+  if (!v) return;
+  const body = document.getElementById('cert-viewer-body');
+  const title = document.getElementById('cert-viewer-title');
+  const openA = document.getElementById('cert-viewer-open');
+  const close = () => { v.classList.add('hidden'); v.classList.remove('flex'); body.innerHTML = ''; document.body.style.overflow = 'auto'; };
+  const open = (src, name) => {
+    const isUrl = /^https?:\/\//i.test(src);
+    const path = isUrl ? src : `certificates/${src}`;
+    if (isUrl && !/\.(pdf|png|jpe?g|webp)(\?|$)/i.test(src)) { window.open(src, '_blank', 'noopener'); return; }
+    title.textContent = name; openA.href = path;
+    body.innerHTML = /\.pdf(\?|$)/i.test(path)
+      ? `<iframe src="${path}#view=FitH" class="w-full h-full border-0" title="${name}"></iframe>`
+      : `<img src="${path}" alt="${name}" class="max-w-full max-h-full object-contain p-4">`;
+    v.classList.remove('hidden'); v.classList.add('flex'); document.body.style.overflow = 'hidden';
+  };
+  document.getElementById('cert-viewer-close').addEventListener('click', close);
+  v.addEventListener('click', e => { if (e.target === v) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !v.classList.contains('hidden')) close(); });
+
+  fetch('certificates/manifest.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : {}).then(map => {
+    document.querySelectorAll('[data-cert-id]').forEach(el => {
+      const src = map[el.dataset.certId];
+      if (!src) return;
+      const name = el.querySelector('h3')?.textContent.trim() || 'Certificate';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-bold tracking-widest uppercase border border-brand-500/60 text-brand-600 dark:text-brand-400 rounded hover:bg-brand-500 hover:text-white transition-colors hover-trigger';
+      btn.innerHTML = '<i class="fas fa-certificate"></i> View certificate &nearr;';
+      btn.addEventListener('click', () => open(src, name));
+      el.appendChild(btn);
+    });
+  }).catch(() => {});
+})();

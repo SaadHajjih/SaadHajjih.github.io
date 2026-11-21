@@ -1,0 +1,8 @@
+{
+  "_help": "Map a certificate id to its file in this folder (PDF, JPG, PNG or WEBP) or to a verification URL. Ids: jea-license, udemy-electrical-design, udemy-etap, eatd-low-current, eatd-revit. Leave a value empty to hide its button.",
+  "jea-license": "",
+  "udemy-electrical-design": "",
+  "udemy-etap": "",
+  "eatd-low-current": "",
+  "eatd-revit": ""
+}

@@ -659,7 +659,7 @@
         </div>
 
         <div class="relative border-l border-slate-300 dark:border-slate-700 ml-3 md:ml-4 space-y-16">
-            <div class="relative pl-6 md:pl-10">
+            <div class="relative pl-6 md:pl-10" data-cert-id="eatd-revit">
                 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Revit for Electrical Engineers</h3>
@@ -667,7 +667,7 @@
                 </div>
                 <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Engineers Academy for Training and Development (EATD)</h4>
             </div>
-            <div class="relative pl-6 md:pl-10">
+            <div class="relative pl-6 md:pl-10" data-cert-id="eatd-low-current">
                 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Low Current Systems Design</h3>
@@ -675,7 +675,7 @@
                 </div>
                 <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Engineers Academy for Training and Development (EATD)</h4>
             </div>
-            <div class="relative pl-6 md:pl-10">
+            <div class="relative pl-6 md:pl-10" data-cert-id="udemy-etap">
                 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">The Complete Electrical Power with ETAP &amp; Manual Analysis</h3>
@@ -683,7 +683,7 @@
                 </div>
                 <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-2">Udemy</h4>
             </div>
-            <div class="relative pl-6 md:pl-10">
+            <div class="relative pl-6 md:pl-10" data-cert-id="jea-license">
                 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Licensed Electrical Engineer</h3>
@@ -693,7 +693,7 @@
                 <p class="text-xs md:text-sm font-mono text-slate-500 dark:text-slate-500">Active Licensure Status</p>
             </div>
 
-            <div class="relative pl-6 md:pl-10">
+            <div class="relative pl-6 md:pl-10" data-cert-id="udemy-electrical-design">
                 <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-[#0a0f16]"></span>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">Ultimate Electrical Design Course from Zero to Hero</h3>
@@ -1108,6 +1108,18 @@
             if (e.key === 'ArrowLeft') navigateProject(-1);
         });
     </script>
+    <div id="cert-viewer" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+        <div class="relative w-full max-w-4xl h-[85vh] bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col shadow-2xl">
+            <div class="flex items-center justify-between gap-4 px-5 py-3 border-b border-slate-200 dark:border-slate-800">
+                <span id="cert-viewer-title" class="font-mono text-xs tracking-widest uppercase text-brand-500 truncate"></span>
+                <div class="flex items-center gap-2 shrink-0">
+                    <a id="cert-viewer-open" href="#" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-mono border border-slate-300 dark:border-slate-700 rounded hover:border-brand-500 hover:text-brand-500 transition-colors">OPEN &nearr;</a>
+                    <button id="cert-viewer-close" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:text-brand-500 transition-colors" aria-label="Close"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="cert-viewer-body" class="flex-grow bg-slate-100 dark:bg-[#0a0f16] flex items-center justify-center overflow-auto"></div>
+        </div>
+    </div>
     <script src="assets/enhance.js" defer></script>
 </body>
 </html>
