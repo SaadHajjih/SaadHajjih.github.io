@@ -97,7 +97,7 @@
   const AR_TITLE = "سعد حجه | مهندس تصميم كهربائي", EN_TITLE = document.title;
 
   const norm = t => t.replace(/\s+/g, " ").trim();
-  const skip = n => !n.parentElement || n.parentElement.closest("script,style,[data-i18n],[data-no-i18n],[data-lang-toggle]");
+  const skip = n => !n.parentElement || n.parentElement.closest("script,style,[data-i18n],[data-no-i18n]");
   function trNode(n, ar) {
     if (ar) {
       const src = n.__en !== undefined ? n.__en : n.nodeValue;
@@ -120,11 +120,29 @@
       el.textContent = ar ? AR_KEYS[el.dataset.i18n] || el.__en : el.__en;
     });
     walk(document.body, ar);
-    $$("[data-lang-toggle]").forEach(b => { b.textContent = ar ? "English" : "عربي"; b.lang = ar ? "en" : "ar"; });
+    $$("[data-set-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setLang === root.lang)));
     const mb = $(".menu-btn"); if (mb) mb.setAttribute("aria-label", ar ? "القائمة" : "Menu");
+    const seg = $(".seg"); if (seg) seg.setAttribute("aria-label", ar ? "اللغة" : "Language");
+    updateThemeLabel();
     if (save) try { localStorage.setItem("lang", root.lang); } catch (e) {}
   }
-  $$("[data-lang-toggle]").forEach(b => b.addEventListener("click", () => setLang(root.lang === "ar" ? "en" : "ar", true)));
+  $$("[data-set-lang]").forEach(b => b.addEventListener("click", () => { if (b.dataset.setLang !== root.lang) setLang(b.dataset.setLang, true); }));
+
+  /* ---------- Light / dark ---------- */
+  const themeBtn = $("#theme-toggle");
+  function updateThemeLabel() {
+    if (!themeBtn) return;
+    const dark = root.dataset.theme === "dark", ar = root.lang === "ar";
+    themeBtn.setAttribute("aria-label", dark ? (ar ? "الوضع الفاتح" : "Switch to light mode") : (ar ? "الوضع الداكن" : "Switch to dark mode"));
+    themeBtn.title = themeBtn.getAttribute("aria-label");
+  }
+  if (themeBtn) themeBtn.addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    updateThemeLabel();
+  });
+  if (!root.dataset.theme) root.dataset.theme = "light";
+  updateThemeLabel();
 
   /* ---------- Mobile menu ---------- */
   const menuBtn = $(".menu-btn"), nav = $("#nav");
