@@ -93,7 +93,7 @@
     "Email": "البريد الإلكتروني", "LinkedIn": "لينكدإن", "GitHub": "غيت هب", "Location": "الموقع", "Amman, Jordan": "عمّان، الأردن",
     "Back to top": "العودة للأعلى", "Open in new tab": "فتح في تبويب جديد", "Close": "إغلاق"
   };
-  const AR_KEYS = { "name.first": "سعد", "name.last": "حجه", "name.full": "سعد حجه" };
+  const AR_KEYS = { "name.first": "سعد", "name.last": "حجه", "name.full": "سعد حجه", "edu.title": "التعليم" };
   const AR_TITLE = "سعد حجه | مهندس تصميم كهربائي", EN_TITLE = document.title;
 
   const norm = t => t.replace(/\s+/g, " ").trim();
