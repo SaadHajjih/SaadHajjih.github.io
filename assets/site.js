@@ -97,7 +97,7 @@
   const AR_TITLE = "سعد حجه | مهندس تصميم كهربائي", EN_TITLE = document.title;
 
   const norm = t => t.replace(/\s+/g, " ").trim();
-  const skip = n => !n.parentElement || n.parentElement.closest("script,style,[data-i18n],[data-no-i18n],[lang='ar']");
+  const skip = n => !n.parentElement || n.parentElement.closest("script,style,[data-i18n],[data-no-i18n],[data-lang-toggle]");
   function trNode(n, ar) {
     if (ar) {
       const src = n.__en !== undefined ? n.__en : n.nodeValue;
