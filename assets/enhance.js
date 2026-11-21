@@ -49,22 +49,27 @@
   buildCircuit();
   let rT; addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(buildCircuit, 250); });
 
-  /* Typewriter roles */
+  /* Typewriter roles (EN / AR) */
   const typer = $('#typer');
   if (typer) {
-    const roles = ['Power Distribution', 'Lighting Design', 'ELV & Low Current Systems', 'BIM Workflows', 'Renewable Integration'];
-    if (reduce) typer.textContent = roles[0];
+    const ROLES = {
+      en: ['Power Distribution', 'Lighting Design', 'ELV & Low Current Systems', 'BIM Workflows', 'Renewable Integration'],
+      ar: ['توزيع القدرة الكهربائية', 'تصميم الإنارة', 'أنظمة التيار الخفيف', 'سير عمل BIM', 'دمج الطاقة المتجددة']
+    };
+    const rolesNow = () => ROLES[document.documentElement.lang === 'ar' ? 'ar' : 'en'];
+    if (reduce) { typer.textContent = rolesNow()[0]; addEventListener('langchange', () => typer.textContent = rolesNow()[0]); }
     else {
-      let r = 0, c = 0, del = false;
+      let r = 0, c = 0, del = false, roles = rolesNow(), timer;
       const tick = () => {
-        const word = roles[r];
+        const word = roles[r % roles.length];
         typer.textContent = word.slice(0, c);
-        if (!del && c === word.length) { del = true; return setTimeout(tick, 1600); }
-        if (del && c === 0) { del = false; r = (r + 1) % roles.length; }
+        if (!del && c === word.length) { del = true; timer = setTimeout(tick, 1600); return; }
+        if (del && c === 0) { del = false; roles = rolesNow(); r = (r + 1) % roles.length; }
         c += del ? -1 : 1;
-        setTimeout(tick, del ? 35 : 70);
+        timer = setTimeout(tick, del ? 35 : 70);
       };
-      setTimeout(tick, 2400);
+      addEventListener('langchange', () => { clearTimeout(timer); roles = rolesNow(); r = 0; c = 0; del = false; timer = setTimeout(tick, 300); });
+      timer = setTimeout(tick, 2400);
     }
   }
 
@@ -91,7 +96,7 @@
   });
 
   /* Spotlight cards */
-  $$('#projects [onclick^="openProject"], .skill-tab-content > div, .readout').forEach(el => {
+  $$('#projects [onclick^="openProject"], .tk-panel, .readout').forEach(el => {
     el.classList.add('spot');
     el.addEventListener('pointermove', e => {
       const r = el.getBoundingClientRect();

@@ -146,3 +146,76 @@ html:not(.dark) .readout { background: rgba(255,255,255,.8); border-color: #e2e8
     -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 55%, transparent 90%);
             mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 55%, transparent 90%); }
 }
+
+/* ===== Portrait ===== */
+.portrait-frame { position: relative; padding: 14px; }
+.portrait-frame img { filter: saturate(.95) contrast(1.03); transition: transform .6s ease, filter .6s ease; box-shadow: 0 25px 60px -25px rgba(16,185,129,.35); }
+.portrait-frame:hover img { transform: scale(1.015); filter: none; }
+.pf-corner { position: absolute; width: 26px; height: 26px; border-color: #10b981; border-style: solid; border-width: 0; }
+.pf-tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+.pf-tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+.pf-bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+.pf-br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+.pf-badge { position: absolute; bottom: 30px; inset-inline-start: 30px; display: inline-flex; align-items: center; gap: .5rem;
+  padding: .4rem .75rem; border-radius: 999px; font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em;
+  color: #fff; background: rgba(10,15,22,.75); backdrop-filter: blur(6px); border: 1px solid rgba(16,185,129,.4); }
+
+/* ===== Toolkit bento ===== */
+.tk-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .tk-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .tk-systems { grid-column: span 2; } }
+@media (min-width: 1024px) {
+  .tk-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .tk-systems { grid-column: span 2; grid-row: span 2; }
+  .tk-codes { grid-column: span 2; }
+}
+.tk-panel { position: relative; border-radius: .9rem; padding: 1.5rem; border: 1px solid #e2e8f0; background: rgba(255,255,255,.85); transition: border-color .3s, transform .3s; overflow: hidden; }
+.dark .tk-panel { border-color: rgba(148,163,184,.16); background: rgba(13,18,28,.6); backdrop-filter: blur(6px); }
+.tk-panel:hover { border-color: rgba(16,185,129,.45); }
+.tk-head { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem; position: relative; z-index: 2; }
+.tk-head i { width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border-radius: .5rem; color: #10b981; background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.3); font-size: .95rem; }
+.tk-head h3 { font: 700 .8rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .18em; text-transform: uppercase; color: #0f172a; }
+.dark .tk-head h3 { color: #fff; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; position: relative; z-index: 2; }
+.chip { font: 500 .78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; padding: .55rem .75rem; border-radius: .4rem; border: 1px solid #e2e8f0; color: #334155; background: #f8fafc; transition: all .2s; }
+.dark .chip { border-color: rgba(148,163,184,.2); color: #cbd5e1; background: rgba(15,23,42,.6); }
+.chip:hover { border-color: #10b981; color: #10b981; transform: translateY(-1px); }
+.sys-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; position: relative; z-index: 2; }
+@media (min-width: 640px) { .sys-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (min-width: 1280px) { .sys-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.sys-tile { display: flex; flex-direction: column; gap: .75rem; padding: 1rem; border-radius: .6rem; border: 1px dashed #cbd5e1; transition: all .25s; min-height: 6.25rem; }
+.dark .sys-tile { border-color: rgba(148,163,184,.22); }
+.sys-tile i { color: #10b981; font-size: 1.15rem; }
+.sys-tile span { font-size: .85rem; font-weight: 600; color: #0f172a; line-height: 1.25; }
+.dark .sys-tile span { color: #e2e8f0; }
+.sys-tile:hover { border-style: solid; border-color: #10b981; background: rgba(16,185,129,.06); }
+.sys-tile:hover i { filter: drop-shadow(0 0 6px #10b981); }
+
+/* ===== Language toggle ===== */
+.lang-toggle { font: 700 .75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; padding: .55rem .7rem; border-radius: .5rem; border: 1px solid rgba(148,163,184,.35); color: inherit; transition: all .2s; }
+.lang-toggle:hover { border-color: #10b981; color: #10b981; }
+
+/* ===== Arabic / RTL ===== */
+[dir="rtl"] body, [dir="rtl"] .font-mono, [dir="rtl"] .font-sans, [dir="rtl"] .chip, [dir="rtl"] .tk-head h3, [dir="rtl"] .sec-num,
+[dir="rtl"] .title-block, [dir="rtl"] .pf-badge, [dir="rtl"] #boot-log, [dir="rtl"] .lang-toggle {
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif;
+}
+[dir="rtl"] body * { letter-spacing: 0 !important; }
+[dir="rtl"] .lang-toggle, html:not([dir="rtl"]) .lang-toggle { font-family: 'IBM Plex Sans Arabic', ui-monospace, monospace; }
+[dir="rtl"] #hero h1, [dir="rtl"] #hero .text-outline { line-height: 1.15 !important; padding-bottom: .1em; }
+[dir="rtl"] .text-right { text-align: left !important; }
+[dir="rtl"] .title-block { text-align: right; }
+[dir="rtl"] #boot-log { text-align: right; direction: rtl; }
+/* timelines */
+[dir="rtl"] .relative.border-l { border-left-width: 0 !important; border-right-width: 1px; border-right-style: solid; margin-left: 0 !important; margin-right: .75rem !important; }
+[dir="rtl"] .relative.pl-6 { padding-left: 0 !important; padding-right: 1.5rem !important; }
+[dir="rtl"] .-left-\[9px\] { left: auto !important; right: -9px; }
+@media (min-width: 768px) {
+  [dir="rtl"] .relative.border-l { margin-right: 1rem !important; }
+  [dir="rtl"] .relative.pl-6 { padding-right: 2.5rem !important; }
+}
+[dir="rtl"] .ml-10 { margin-left: 0 !important; margin-right: 2.5rem; }
+[dir="rtl"] .ml-4 { margin-left: 0 !important; margin-right: 1rem; }
+[dir="rtl"] #projects [onclick^="openProject"] h3::after { content: " \2190"; transform: translateX(6px); }
+[dir="rtl"] #projects [onclick^="openProject"]:hover h3::after { transform: translateX(0); }
+[dir="rtl"] .readout::after { animation-direction: reverse; }
+[dir="rtl"] #circuit-bg { transform: translateX(50%) scaleX(-1); right: 50%; left: auto; }

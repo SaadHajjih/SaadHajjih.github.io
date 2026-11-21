@@ -2,6 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang");if(l==="ar"){document.documentElement.lang="ar";document.documentElement.dir="rtl";}}catch(e){}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Sa'ed Hajjih | Electrical Design Engineer</title>
@@ -22,7 +23,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/enhance.css?v=e0319d75">
+    <link rel="stylesheet" href="assets/enhance.css?v=014ef324">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <meta name="theme-color" content="#0a0f16">
     <meta property="og:image:width" content="1200">
@@ -150,7 +151,7 @@
 
     <div id="scroll-progress"></div>
 
-    <div id="preloader" class="fixed inset-0 z-[100] bg-[#0a0f16] flex flex-col items-center justify-center transition-opacity duration-700">
+    <div id="preloader" data-no-i18n class="fixed inset-0 z-[100] bg-[#0a0f16] flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="relative flex flex-col items-center">
             <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 animate-pulse">S<span class="text-brand-500">.</span>H</h1>
             <div class="w-48 md:w-64 h-[2px] bg-slate-800 rounded overflow-hidden">
@@ -171,7 +172,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 z-50">
-                    <a href="#" class="text-2xl font-extrabold tracking-tighter text-slate-900 dark:text-white hover-trigger">
+                    <a href="#" data-no-i18n class="text-2xl font-extrabold tracking-tighter text-slate-900 dark:text-white hover-trigger">
                         S<span class="text-brand-500">.</span>Hajjih
                     </a>
                 </div>
@@ -186,6 +187,7 @@
                         <a href="#certifications" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Certifications</a>
                         <a href="#cv-contact" class="nav-item text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors hover-trigger">Contact</a>
                         
+                        <button type="button" data-lang-toggle class="lang-toggle hover-trigger" aria-label="التبديل إلى العربية">عربي</button>
                         <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all hover-trigger" aria-label="Toggle Theme">
                             <i class="fas fa-moon dark:hidden"></i>
                             <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
@@ -198,7 +200,8 @@
                 </div>
 
                 <div class="md:hidden flex items-center gap-4 z-50">
-                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all" aria-label="Toggle Theme">
+                    <button type="button" data-lang-toggle class="lang-toggle " aria-label="التبديل إلى العربية">عربي</button>
+                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all" aria-label="Toggle Theme">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
@@ -243,7 +246,7 @@
                     <span id="typer" class="text-brand-600 dark:text-brand-400 font-semibold"></span><span class="caret">&#9613;</span>
                 </p>
                 
-                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl" data-i18n="hero.summary">
                     Electrical Design Engineer with expertise in <strong class="text-slate-900 dark:text-white">power distribution, electrical building systems, and engineering design</strong>. Combining technical precision, industry standards, and practical problem-solving to deliver reliable infrastructure for commercial, residential, and healthcare projects.
                 </p>
                 
@@ -342,187 +345,56 @@
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
         </div>
-        
-        <div class="max-w-4xl space-y-6 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            <p>
-                Hello! I'm Sa'ed, an <strong>Electrical Power Engineer</strong> and <strong>Electrical Design Engineer</strong> based in Amman, Jordan.
-            </p>
-            <p>
-                I specialize in the design of electrical power, lighting, and ELV systems for commercial, healthcare, residential, and mixed-use developments. My work includes electrical design calculations, technical documentation, tender package preparation, BOQ development, site supervision, inspections, and electrical system design using <strong>ETAP, Revit, DIALux, AutoCAD, and Navisworks</strong>.
-            </p>
-            <p>
-                Beyond my professional work, I have a strong interest in low-current systems, networking, structured cabling infrastructure, virtualization, and self-hosted server environments. I maintain a personal home lab where I deploy and manage servers, storage, networking equipment, and self-hosted services.
-            </p>
-            <p>
-                I am currently expanding my expertise in BIM workflows, advanced electrical design, and intelligent building systems while delivering safe, efficient, and code-compliant designs in accordance with <strong>NFPA, CIBSE, the Saudi Building Code (SBC), and Jordanian regulations</strong>.
-            </p>
+
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <figure class="lg:col-span-4 max-w-sm mx-auto lg:mx-0 w-full">
+                <div class="portrait-frame">
+                    <span class="pf-corner pf-tl"></span><span class="pf-corner pf-tr"></span><span class="pf-corner pf-bl"></span><span class="pf-corner pf-br"></span>
+                    <picture>
+                        <source srcset="images/portrait.webp" type="image/webp">
+                        <img src="images/portrait.jpg" alt="Portrait of Sa'ed Hajjih" width="640" height="640" loading="lazy" class="w-full aspect-square object-cover rounded-lg">
+                    </picture>
+                    <span class="pf-badge"><span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> <span>Available for projects</span></span>
+                </div>
+                <figcaption class="mt-4 font-mono text-[10px] tracking-widest uppercase text-slate-500 flex justify-between"><span>Fig. 01</span><span>Amman, Jordan</span></figcaption>
+            </figure>
+
+            <div class="lg:col-span-8 space-y-6 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p data-i18n="about.p1">Hello! I'm Sa'ed, an <strong>Electrical Power Engineer</strong> and <strong>Electrical Design Engineer</strong> based in Amman, Jordan.</p>
+                <p data-i18n="about.p2">I specialize in the design of electrical power, lighting, and ELV systems for commercial, healthcare, residential, and mixed-use developments. My work includes electrical design calculations, technical documentation, tender package preparation, BOQ development, site supervision, inspections, and electrical system design using <strong>ETAP, Revit, DIALux, AutoCAD, and Navisworks</strong>.</p>
+                <p data-i18n="about.p3">Beyond my professional work, I have a strong interest in low-current systems, networking, structured cabling infrastructure, virtualization, and self-hosted server environments. I maintain a personal home lab where I deploy and manage servers, storage, networking equipment, and self-hosted services.</p>
+                <p data-i18n="about.p4">I am currently expanding my expertise in BIM workflows, advanced electrical design, and intelligent building systems while delivering safe, efficient, and code-compliant designs in accordance with <strong>NFPA, CIBSE, the Saudi Building Code (SBC), and Jordanian regulations</strong>.</p>
+            </div>
         </div>
     </section>
 
     <section id="skills" class="py-24 max-w-7xl mx-auto px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/50 reveal">
-        <div class="flex items-center gap-4 mb-12">
+        <div class="flex items-center gap-4 mb-4">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Technical Toolkit</h2>
             <div class="h-px bg-slate-300 dark:bg-slate-800 flex-grow max-w-xs"></div>
         </div>
+        <p class="text-slate-600 dark:text-slate-400 mb-12 max-w-2xl">The systems I design, and the tools and standards I use to deliver them.</p>
 
-        <div class="flex border-b border-slate-200 dark:border-slate-800 font-mono text-[10px] md:text-xs tracking-widest overflow-x-auto no-scrollbar">
-            <button id="btn-calcs" onclick="switchTab('calcs')" class="skill-tab-btn px-6 py-4 border-t-2 border-brand-500 text-brand-500 bg-slate-50 dark:bg-[#0d121c] transition-colors hover-trigger whitespace-nowrap font-bold">Design & Calcs</button>
-            <button id="btn-bim" onclick="switchTab('bim')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">BIM & Drafting</button>
-            <button id="btn-power" onclick="switchTab('power')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">Power & Renewables</button>
-            <button id="btn-codes" onclick="switchTab('codes')" class="skill-tab-btn px-6 py-4 border-t-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 transition-colors hover-trigger whitespace-nowrap">Codes & Standards</button>
-        </div>
-
-        <div id="content-calcs" class="skill-tab-content grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-file-excel text-2xl text-emerald-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Advanced Excel</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
-                </div>
+        <div class="tk-grid">
+            <div class="tk-panel tk-systems">
+                <div class="tk-head"><i class="fas fa-diagram-project"></i><h3>Systems I Design</h3></div>
+                <div class="sys-grid"><div class="sys-tile"><i class="fas fa-bolt"></i><span>Power Distribution</span></div><div class="sys-tile"><i class="fas fa-lightbulb"></i><span>Lighting Design</span></div><div class="sys-tile"><i class="fas fa-bell"></i><span>Fire Alarm</span></div><div class="sys-tile"><i class="fas fa-video"></i><span>CCTV</span></div><div class="sys-tile"><i class="fas fa-id-card"></i><span>Access Control</span></div><div class="sys-tile"><i class="fas fa-network-wired"></i><span>Structured Cabling</span></div><div class="sys-tile"><i class="fas fa-wifi"></i><span>Wi-Fi Networks</span></div><div class="sys-tile"><i class="fas fa-bullhorn"></i><span>Public Address</span></div><div class="sys-tile"><i class="fas fa-car-battery"></i><span>UPS &amp; Standby Power</span></div><div class="sys-tile"><i class="fas fa-server"></i><span>MDF / IDF Rooms</span></div><div class="sys-tile"><i class="fas fa-solar-panel"></i><span>Solar PV</span></div><div class="sys-tile"><i class="fas fa-arrow-down-wide-short"></i><span>Earthing &amp; Grounding</span></div></div>
             </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-table text-2xl text-blue-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Panel / Load Sched.</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[100%]"></div></div>
-                </div>
+            <div class="tk-panel ">
+                <div class="tk-head"><i class="fas fa-pen-ruler"></i><h3>Design &amp; BIM</h3></div>
+                <div class="chips"><span class="chip">AutoCAD</span><span class="chip">Revit MEP</span><span class="chip">Navisworks</span><span class="chip">BIM 360 / ACC</span><span class="chip">DIALux evo</span><span class="chip">NetSpot</span></div>
             </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-plug text-2xl text-orange-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Cable Sizing</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
-                </div>
+            <div class="tk-panel ">
+                <div class="tk-head"><i class="fas fa-calculator"></i><h3>Analysis &amp; Calculations</h3></div>
+                <div class="chips"><span class="chip">ETAP</span><span class="chip">Load Scheduling</span><span class="chip">Cable Sizing</span><span class="chip">Voltage Drop</span><span class="chip">Short Circuit</span><span class="chip">Grounding Grid</span><span class="chip">Advanced Excel</span></div>
             </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-bolt text-2xl text-yellow-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Short Circuit Calcs</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
-                </div>
+            <div class="tk-panel tk-codes">
+                <div class="tk-head"><i class="fas fa-scale-balanced"></i><h3>Codes &amp; Standards</h3></div>
+                <div class="chips"><span class="chip">NFPA 72</span><span class="chip">Saudi Building Code</span><span class="chip">CIBSE</span><span class="chip">DORI</span><span class="chip">Jordanian National Codes</span></div>
             </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-arrow-down text-2xl text-red-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Voltage Drop Calcs</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-lightbulb text-2xl text-yellow-300 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">DIALux evo (Lighting)</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
-            </div>
-            <div class="p-6 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#05080f] h-40 md:h-44 hidden md:block"></div>
-            <div class="p-6 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-[#05080f] h-40 md:h-44 hidden md:block"></div>
-        </div>
-
-        <div id="content-bim" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-cube text-2xl text-blue-400 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Revit</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[70%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-pencil-ruler text-2xl text-red-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">AutoCAD</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-object-group text-2xl text-emerald-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Navisworks Manage</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[50%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-cloud text-2xl text-cyan-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">BIM 360 / ACC</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[40%]"></div></div>
-                </div>
-            </div>
-        <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-wifi text-2xl text-brand-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">NetSpot (Wi-Fi Survey)</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="content-power" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-charging-station text-2xl text-blue-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">ETAP</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-sun text-2xl text-yellow-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">PVsyst</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-leaf text-2xl text-green-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">HOMER Pro</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-project-diagram text-2xl text-purple-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">SLD Generation</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="content-codes" class="skill-tab-content hidden grid grid-cols-2 md:grid-cols-4 border-l border-slate-200 dark:border-slate-800">
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-fire-extinguisher text-2xl text-red-600 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">NFPA (Life Safety)</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-book-open text-2xl text-emerald-600 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Saudi Building Code</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[80%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-building text-2xl text-blue-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">CIBSE Guidelines</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
-            </div>
-            <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-flag text-2xl text-slate-400 dark:text-slate-300 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">Jordanian Nat. Codes</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
-                </div>
-            </div>
-        <div class="p-4 md:p-6 border-r border-b border-slate-200 dark:border-slate-800 flex flex-col justify-between bg-white dark:bg-[#0a0f16] hover:bg-slate-50 dark:hover:bg-[#0d121c] transition-colors hover-trigger h-40 md:h-44 group">
-                <i class="fas fa-video text-2xl text-brand-500 mb-4"></i>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-xs md:text-sm font-mono tracking-tight group-hover:text-brand-500 transition-colors">DORI (CCTV Design)</h4>
-                    <div class="w-full h-[2px] bg-slate-200 dark:bg-slate-800 overflow-hidden"><div class="h-full bg-brand-500 w-[85%]"></div></div>
-                </div>
+            <div class="tk-panel ">
+                <div class="tk-head"><i class="fas fa-solar-panel"></i><h3>Renewables</h3></div>
+                <div class="chips"><span class="chip">PVsyst</span><span class="chip">HOMER Pro</span><span class="chip">Grid-Tied PV</span></div>
             </div>
         </div>
     </section>
@@ -624,8 +496,8 @@
                 </div>
                 <h4 class="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 mb-6">Arabian Office Automation – Xerox</h4>
                 <ul class="space-y-3 text-sm md:text-base text-slate-600 dark:text-slate-400">
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">IT Support &amp; Systems Integration:</strong> Provided technical assistance for multi-functional printer hardware and office automation software, troubleshooting connectivity and integration issues.</li>
-                    <li class="flex items-start gap-3"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">Hardware &amp; Software Troubleshooting:</strong> Diagnosed hardware, firmware, and network interface faults across enterprise multi-functional devices to minimize downtime.</li>
+                    <li class="flex items-start gap-3" data-i18n="exp.intern.b1"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">IT Support &amp; Systems Integration:</strong> Provided technical assistance for multi-functional printer hardware and office automation software, troubleshooting connectivity and integration issues.</li>
+                    <li class="flex items-start gap-3" data-i18n="exp.intern.b2"><span class="text-brand-500 mt-0.5">•</span> <strong class="text-slate-800 dark:text-slate-300">Hardware &amp; Software Troubleshooting:</strong> Diagnosed hardware, firmware, and network interface faults across enterprise multi-functional devices to minimize downtime.</li>
                 </ul>
             </div>
         </div>
@@ -710,7 +582,7 @@
             
             <div class="flex flex-col justify-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Let's work together</h2>
-                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-10">
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-10" data-i18n="contact.p">
                     Open to new roles, consultancy work and project collaborations in <strong class="text-slate-900 dark:text-white">power, lighting and ELV design</strong>. Send me an email or connect on LinkedIn.
                 </p>
                 
@@ -966,7 +838,7 @@
         }
 
         /* PROJECT MODAL DATA & NAVIGATION LOGIC */
-        const projectData = {
+        const projectData = window.projectData = {
             shatrah: {
                 title: "Al-Shatrah Hospital (Iraq)",
                 tags: ["LV Distribution", "Clash Detection", "Medical Standard"],
@@ -1120,6 +992,7 @@
             <div id="cert-viewer-body" class="flex-grow bg-slate-100 dark:bg-[#0a0f16] flex items-center justify-center overflow-auto"></div>
         </div>
     </div>
-    <script src="assets/enhance.js?v=e0319d75" defer></script>
+    <script src="assets/i18n.js?v=014ef324" defer></script>
+    <script src="assets/enhance.js?v=014ef324" defer></script>
 </body>
 </html>
