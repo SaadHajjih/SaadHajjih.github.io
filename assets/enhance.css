@@ -1,0 +1,141 @@
+/* ===== Enhancement layer: engineering / blueprint theme ===== */
+html, body { overflow-x: clip; }
+
+/* Blueprint grid backdrop */
+.dark body {
+  background-image:
+    linear-gradient(rgba(16,185,129,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,.035) 1px, transparent 1px),
+    linear-gradient(rgba(148,163,184,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,.025) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  background-attachment: fixed;
+}
+html:not(.dark) body {
+  background-image:
+    linear-gradient(rgba(15,23,42,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+/* Scroll progress "current" bar */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 60;
+  transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, #059669, #10b981, #6ee7b7);
+  box-shadow: 0 0 12px rgba(16,185,129,.8);
+}
+
+/* Hero circuit background */
+#hero { position: relative; }
+#hero-content { position: relative; z-index: 2; }
+#circuit-bg {
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
+  z-index: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, #000 30%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, #000 30%, transparent 75%);
+}
+#circuit-bg svg { width: 100%; height: 100%; display: block; }
+.trace { fill: none; stroke: rgba(16,185,129,.16); stroke-width: 1.5; }
+html:not(.dark) .trace { stroke: rgba(5,150,105,.18); }
+.pulse {
+  fill: none; stroke: #34d399; stroke-width: 2; stroke-linecap: round;
+  filter: drop-shadow(0 0 4px #10b981);
+  stroke-dasharray: 60 2000; stroke-dashoffset: 2060;
+  animation: flow var(--d, 6s) linear infinite; animation-delay: var(--delay, 0s);
+}
+html:not(.dark) .pulse { stroke: #059669; filter: none; }
+.node { fill: #0a0f16; stroke: rgba(16,185,129,.55); stroke-width: 1.5; }
+html:not(.dark) .node { fill: #f8fafc; stroke: rgba(5,150,105,.5); }
+.node.hot { animation: nodeGlow 3s ease-in-out infinite; animation-delay: var(--delay, 0s); }
+@keyframes flow { to { stroke-dashoffset: 0; } }
+@keyframes nodeGlow { 0%,100% { stroke: rgba(16,185,129,.4); } 50% { stroke: #34d399; filter: drop-shadow(0 0 6px #10b981); } }
+
+/* Typewriter caret */
+.caret { display: inline-block; color: #10b981; animation: blink 1s steps(1) infinite; margin-left: 1px; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Hero name shimmer */
+#hero h1 {
+  background: linear-gradient(110deg, currentColor 40%, #6ee7b7 50%, currentColor 60%);
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; animation: shimmer 7s ease-in-out infinite;
+}
+#hero h1 span { -webkit-text-fill-color: #10b981; }
+@keyframes shimmer { 0%,60% { background-position: 100% 0; } 100% { background-position: -50% 0; } }
+
+/* Stats readout strip */
+.readout {
+  position: relative; padding: 1.5rem 1.25rem; border: 1px solid rgba(148,163,184,.18);
+  background: rgba(13,18,28,.55); backdrop-filter: blur(6px); border-radius: .75rem; overflow: hidden;
+}
+html:not(.dark) .readout { background: rgba(255,255,255,.8); border-color: #e2e8f0; }
+.readout::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+  background: linear-gradient(90deg, transparent, #10b981, transparent);
+  transform: translateX(-100%); animation: sweep 4s ease-in-out infinite; animation-delay: var(--delay, 0s);
+}
+@keyframes sweep { 60%,100% { transform: translateX(100%); } }
+.readout .val { font-variant-numeric: tabular-nums; }
+
+/* Section labels */
+.sec-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .75rem; letter-spacing: .2em;
+  color: #10b981; padding: .25rem .5rem; border: 1px solid rgba(16,185,129,.35); border-radius: .25rem;
+  white-space: nowrap; align-self: center;
+}
+#cv-contact .sec-num { display: inline-block; margin-bottom: 1rem; align-self: flex-start; }
+
+/* Spotlight cards */
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(16,185,129,.13), transparent 45%);
+  opacity: 0; transition: opacity .3s;
+}
+.spot:hover::before { opacity: 1; }
+
+/* Project cards: richer hover */
+#projects [onclick^="openProject"] { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+#projects [onclick^="openProject"]:hover { box-shadow: 0 20px 50px -20px rgba(16,185,129,.35); }
+#projects [onclick^="openProject"] h3::after {
+  content: " \2192"; color: #10b981; opacity: 0; display: inline-block; transform: translateX(-6px);
+  transition: all .3s;
+}
+#projects [onclick^="openProject"]:hover h3::after { opacity: 1; transform: translateX(0); }
+
+/* Skill bars charge up */
+.skill-bar { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.skill-bar.charged { transform: scaleX(1); }
+
+/* Timeline dots pulse */
+#experience .bg-brand-500.rounded-full, #certifications .bg-brand-500.rounded-full { box-shadow: 0 0 0 0 rgba(16,185,129,.6); animation: ping2 2.4s infinite; }
+@keyframes ping2 { 70% { box-shadow: 0 0 0 10px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+
+/* Boot log in preloader */
+#boot-log { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #64748b; margin-top: 1rem; height: 4.5em; text-align: left; width: 16rem; }
+#boot-log .ok { color: #10b981; }
+
+/* Drawing title block footer */
+.title-block { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); border: 1px solid rgba(148,163,184,.3); text-align: left; }
+.title-block > div { padding: .6rem .8rem; border-right: 1px solid rgba(148,163,184,.3); border-bottom: 1px solid rgba(148,163,184,.3); }
+.title-block > div:nth-child(4n) { border-right: 0; }
+.title-block > div:nth-last-child(-n+4) { border-bottom: 0; }
+.title-block .k { display: block; font-size: 9px; letter-spacing: .2em; color: #64748b; text-transform: uppercase; }
+.title-block .v { display: block; font-size: 12px; color: inherit; font-weight: 700; margin-top: 2px; }
+.title-block .brand-cell { color: #10b981; }
+@media (max-width: 640px) {
+  .title-block { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .title-block > div:nth-child(4n) { border-right: 1px solid rgba(148,163,184,.3); }
+  .title-block > div:nth-child(2n) { border-right: 0; }
+  .title-block > div:nth-last-child(-n+4) { border-bottom: 1px solid rgba(148,163,184,.3); }
+  .title-block > div:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .node.hot, .caret, #hero h1, .readout::after, #experience .bg-brand-500.rounded-full, #certifications .bg-brand-500.rounded-full { animation: none !important; }
+  .pulse { display: none; }
+  .skill-bar { transition: none; transform: none; }
+}
+@media print { #circuit-bg, #scroll-progress { display: none !important; } }
