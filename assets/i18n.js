@@ -160,6 +160,7 @@
     }
     if (save) try { localStorage.setItem('lang', root.lang); } catch (e) {}
     window.dispatchEvent(new CustomEvent('langchange', { detail: root.lang }));
+    requestAnimationFrame(() => { const y = window.scrollY; document.body.style.display = 'none'; void document.body.offsetHeight; document.body.style.display = ''; window.scrollTo(0, y); });
   }
   window.setLang = setLang;
   document.querySelectorAll('[data-lang-toggle]').forEach(b => b.addEventListener('click', () => setLang(root.lang === 'ar' ? 'en' : 'ar')));
